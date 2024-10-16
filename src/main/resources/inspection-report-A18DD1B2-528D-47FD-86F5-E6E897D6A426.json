@@ -1,0 +1,118 @@
+{
+  "jpgList" : [
+    {
+      "imageList" : [
+        {
+          "imageName" : "Image1Manual_RoomPhoto_group1_09-16-2024-18-39-09_115_09-16-2024-18-39-10.jpg",
+          "imageLocation" : ""
+        },
+        {
+          "imageName" : "Image2Manual_RoomPhoto_group1_09-16-2024-18-39-09_115_09-16-2024-18-39-10.jpg",
+          "imageLocation" : ""
+        }
+      ],
+      "imagePath" : "primary\/above-grade\/level-1\/instaplan\/09-16-2024-18-39-09_115\/images\/insta_manual\/"
+    },
+    {
+      "imagePath" : "primary\/above-grade\/level-1\/instaplan\/09-16-2024-18-39-09_115\/images\/insta_manual\/",
+      "imageList" : [
+        {
+          "imageName" : "Image3Manual_Features_group1_09-16-2024-18-39-09_115_09-16-2024-18-39-11.jpg",
+          "imageLocation" : ""
+        }
+      ]
+    },
+    {
+      "imagePath" : "exterior",
+      "imageList" : [
+        {
+          "imageLocation" : "Railroad",
+          "imageName" : "None"
+        },
+        {
+          "imageLocation" : "Park",
+          "imageName" : "None"
+        },
+        {
+          "imageName" : "img11_ext_locations_hospital_412_115.jpg",
+          "imageLocation" : "Hospital"
+        },
+        {
+          "imageName" : "None",
+          "imageLocation" : "Food Service"
+        },
+        {
+          "imageName" : "None",
+          "imageLocation" : "Roof"
+        },
+        {
+          "imageName" : "None",
+          "imageLocation" : "Foundation"
+        },
+        {
+          "imageName" : "None",
+          "imageLocation" : "Trash or junk on property"
+        },
+        {
+          "imageLocation" : "Sinkhole on property",
+          "imageName" : "None"
+        },
+        {
+          "imageLocation" : "Foundation",
+          "imageName" : "None"
+        },
+        {
+          "imageLocation" : "Roof",
+          "imageName" : "None"
+        },
+        {
+          "imageName" : "img1_ext_pdapi_street_left_412_115.jpg",
+          "imageLocation" : "Street Left"
+        },
+        {
+          "imageName" : "img2_ext_pdapi_street_right_412_115.jpg",
+          "imageLocation" : "Street Right"
+        },
+        {
+          "imageLocation" : "View Front",
+          "imageName" : "img3_ext_pdapi_view_front_412_115.jpg"
+        },
+        {
+          "imageName" : "img4_ext_pdapi_view_left_412_115.jpg",
+          "imageLocation" : "View Left"
+        },
+        {
+          "imageLocation" : "Front Center",
+          "imageName" : "img5_ext_pdapi_front_center_412_115.jpg"
+        },
+        {
+          "imageName" : "img6_ext_pdapi_view_right_412_115.jpg",
+          "imageLocation" : "View Right"
+        },
+        {
+          "imageLocation" : "View Rear",
+          "imageName" : "img7_ext_pdapi_view_rear_412_115.jpg"
+        },
+        {
+          "imageName" : "img8_ext_pdapi_front_left_412_115.jpg",
+          "imageLocation" : "Front Left"
+        },
+        {
+          "imageLocation" : "Front Right",
+          "imageName" : "img9_ext_pdapi_front_right_412_115.jpg"
+        },
+        {
+          "imageName" : "img10_ext_pdapi_back_center_412_115.jpg",
+          "imageLocation" : "Back Center"
+        }
+      ]
+    }
+  ],
+  "address" : "7575 Frankford Rd, Dallas, TX 75252, USA",
+  "propCalcs" : "property-calculations.json",
+  "zipPathList" : [
+    "primary\/above-grade\/level-1\/instaplan\/09-16-2024-18-39-09_115\/images\/insta_manual\/",
+    "exterior"
+  ],
+  "unit" : "935"
+}

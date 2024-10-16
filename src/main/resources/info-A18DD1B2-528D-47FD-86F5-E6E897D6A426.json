@@ -1,0 +1,277 @@
+{
+    "views": {
+      "primaryExterior": [
+        {
+          "photo_id": "",
+          "photo_captured_time": "",
+          "view_type": "Railroad",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "isYes": "Yes",
+          "is_uploaded": "1",
+          "image_name": "",
+          "longitude": "",
+          "latitude": ""
+        },
+        {
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "latitude": "",
+          "is_uploaded": "1",
+          "image_name": "",
+          "isYes": "Yes",
+          "longitude": "",
+          "photo_captured_time": "",
+          "view_type": "Park",
+          "photo_id": ""
+        }
+      ],
+      "secondaryDGExterior": [],
+      "secondaryPHExterior": [],
+      "secondaryOTExterior": []
+    },
+    "updates": {
+      "primaryExterior": [
+        {
+          "photo_id": "",
+          "photo_captured_time": "",
+          "is_uploaded": "1",
+          "update_type": "Roof",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "isYes": "Yes",
+          "image_name": "",
+          "longitude": "",
+          "latitude": ""
+        },
+        {
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "latitude": "",
+          "is_uploaded": "1",
+          "image_name": "",
+          "isYes": "Yes",
+          "update_type": "Foundation",
+          "photo_captured_time": "",
+          "photo_id": "",
+          "longitude": ""
+        }
+      ],
+      "secondaryDGExterior": [],
+      "secondaryPHExterior": [],
+      "secondaryOTExterior": []
+    },
+    "deficiencies": {
+      "primaryExterior": [
+        {
+          "photo_id": "",
+          "photo_captured_time": "",
+          "is_uploaded": "1",
+          "isYes": "Yes",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "image_name": "",
+          "longitude": "",
+          "deficiency_type": "Trash or junk on property",
+          "latitude": ""
+        },
+        {
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "latitude": "",
+          "is_uploaded": "1",
+          "isYes": "Yes",
+          "image_name": "",
+          "deficiency_type": "Sinkhole on property",
+          "photo_captured_time": "",
+          "photo_id": "",
+          "longitude": ""
+        },
+        {
+          "latitude": "",
+          "photo_id": "",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "photo_captured_time": "",
+          "isYes": "Yes",
+          "longitude": "",
+          "image_name": "",
+          "is_uploaded": "1",
+          "deficiency_type": "Foundation"
+        },
+        {
+          "longitude": "",
+          "photo_captured_time": "",
+          "deficiency_type": "Roof",
+          "is_uploaded": "1",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "isYes": "Yes",
+          "image_name": "",
+          "latitude": "",
+          "photo_id": ""
+        }
+      ],
+      "secondaryDGExterior": [],
+      "secondaryPHExterior": [],
+      "secondaryOTExterior": []
+    },
+    "location": {
+      "primaryExterior": [
+        {
+          "photo_id": "140DCB11-029D-451F-BFEA-9736C90CBF8A",
+          "photo_captured_time": "09-16-2024-18-42-29",
+          "is_uploaded": "1",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img11_ext_locations_hospital_412_115.jpg",
+          "location_type": "Hospital",
+          "isYes": "Yes",
+          "image_name": "img11_ext_locations_hospital_412_115.jpg",
+          "longitude": "",
+          "latitude": ""
+        },
+        {
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/",
+          "latitude": "",
+          "is_uploaded": "1",
+          "image_name": "",
+          "isYes": "No",
+          "longitude": "",
+          "photo_captured_time": "",
+          "photo_id": "",
+          "location_type": "Food Service"
+        }
+      ]
+    },
+    "utilities": {
+      "primaryExterior": [
+        {
+          "service_type": "SOLAR",
+          "service_name": "Electrical"
+        },
+        {
+          "service_type": "SEPTIC_PRIVATE",
+          "service_name": "Sewer"
+        },
+        {
+          "service_name": "Water",
+          "service_type": "WELL_SHARED"
+        },
+        {
+          "service_name": "Fuel",
+          "service_type": "PROPANE"
+        }
+      ],
+      "secondaryDGExterior": [],
+      "secondaryPHExterior": [],
+      "secondaryOTExterior": []
+    },
+    "pdapis": {
+      "primaryExterior": [
+        {
+          "photo_id": "215DEA74-4A25-42E1-B112-77F53F1F9D0B",
+          "photo_captured_time": "09-16-2024-18-41-46",
+          "is_uploaded": "1",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img1_ext_pdapi_street_left_412_115.jpg",
+          "isYes": true,
+          "pdapi_type": "Street Left",
+          "image_name": "img1_ext_pdapi_street_left_412_115.jpg",
+          "longitude": "",
+          "latitude": ""
+        },
+        {
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img2_ext_pdapi_street_right_412_115.jpg",
+          "latitude": "",
+          "pdapi_type": "Street Right",
+          "image_name": "img2_ext_pdapi_street_right_412_115.jpg",
+          "isYes": true,
+          "longitude": "",
+          "photo_captured_time": "09-16-2024-18-41-49",
+          "photo_id": "E8CD13C9-E7C2-4A08-B46B-7832CEA3BC84",
+          "is_uploaded": "1"
+        },
+        {
+          "pdapi_type": "View Front",
+          "photo_id": "31D80D6E-D681-4B3F-8BAD-D21CBFF600A3",
+          "latitude": "",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img3_ext_pdapi_view_front_412_115.jpg",
+          "photo_captured_time": "09-16-2024-18-41-54",
+          "isYes": true,
+          "longitude": "",
+          "image_name": "img3_ext_pdapi_view_front_412_115.jpg",
+          "is_uploaded": "1"
+        },
+        {
+          "pdapi_type": "View Left",
+          "photo_id": "451D9D8A-81BA-4385-8202-C68764B4A9CC",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img4_ext_pdapi_view_left_412_115.jpg",
+          "photo_captured_time": "09-16-2024-18-41-57",
+          "latitude": "",
+          "is_uploaded": "1",
+          "image_name": "img4_ext_pdapi_view_left_412_115.jpg",
+          "isYes": true,
+          "longitude": ""
+        },
+        {
+          "pdapi_type": "Front Center",
+          "longitude": "",
+          "photo_captured_time": "09-16-2024-18-42-00",
+          "image_name": "img5_ext_pdapi_front_center_412_115.jpg",
+          "is_uploaded": "1",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img5_ext_pdapi_front_center_412_115.jpg",
+          "photo_id": "8741CC3F-4835-4CC5-9204-3F19501EC057",
+          "isYes": true,
+          "latitude": ""
+        },
+        {
+          "longitude": "",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img6_ext_pdapi_view_right_412_115.jpg",
+          "image_name": "img6_ext_pdapi_view_right_412_115.jpg",
+          "latitude": "",
+          "is_uploaded": "1",
+          "pdapi_type": "View Right",
+          "photo_captured_time": "09-16-2024-18-42-03",
+          "photo_id": "CFF38C14-BCFE-4965-B275-3F9B110CC3FF",
+          "isYes": true
+        },
+        {
+          "image_name": "img7_ext_pdapi_view_rear_412_115.jpg",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img7_ext_pdapi_view_rear_412_115.jpg",
+          "latitude": "",
+          "photo_id": "AF3E1F36-402F-4311-A16E-362E98874711",
+          "isYes": true,
+          "is_uploaded": "1",
+          "longitude": "",
+          "photo_captured_time": "09-16-2024-18-42-06",
+          "pdapi_type": "View Rear"
+        },
+        {
+          "photo_captured_time": "09-16-2024-18-42-10",
+          "pdapi_type": "Front Left",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img8_ext_pdapi_front_left_412_115.jpg",
+          "longitude": "",
+          "is_uploaded": "1",
+          "latitude": "",
+          "photo_id": "0E0E5602-224B-442A-9D33-1525F58D5AED",
+          "isYes": true,
+          "image_name": "img8_ext_pdapi_front_left_412_115.jpg"
+        },
+        {
+          "image_name": "img9_ext_pdapi_front_right_412_115.jpg",
+          "pdapi_type": "Front Right",
+          "is_uploaded": "1",
+          "isYes": true,
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img9_ext_pdapi_front_right_412_115.jpg",
+          "latitude": "",
+          "longitude": "",
+          "photo_id": "60D99CF4-EB50-403F-84D4-A0C7A8B55F22",
+          "photo_captured_time": "09-16-2024-18-42-14"
+        },
+        {
+          "photo_id": "1D270B49-1885-4493-AFED-B6717809BFB8",
+          "image_url": "instaplan-master/no-super-entity/entity-classvaluation-1/7575-frankford-rd--dallas--tx-75252--usa/935/115/primary/exterior/img10_ext_pdapi_back_center_412_115.jpg",
+          "is_uploaded": "1",
+          "latitude": "",
+          "longitude": "",
+          "image_name": "img10_ext_pdapi_back_center_412_115.jpg",
+          "photo_captured_time": "09-16-2024-18-42-19",
+          "pdapi_type": "Back Center",
+          "isYes": true
+        }
+      ],
+      "secondaryDGExterior": [],
+      "secondaryPHExterior": [],
+      "secondaryOTExterior": []
+    }
+  }

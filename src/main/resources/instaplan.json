@@ -1,0 +1,99 @@
+{
+ "inspectionDate":"2023-04-27T06:00:00Z", 
+ "signatureDate":"2023-04-27T06:00:00Z",
+ "scannedDate": "2023-04-27T06:00:00Z",
+ "submittedDateAndTime": "2023-04-27T23:23:23Z",
+ "finishedDateAndTime": "2023-04-28T09:09:09Z",
+ "firstSpinCapturedAt": "2023-04-27T16:32:27Z",
+ "lastSpinCapturedAt": "2023-04-27T17:22:45Z",
+ "gpsCoordinates":{
+ "latitude": 39.69586,
+"longitude": -104.9828	
+},
+"cv_gpsCoordinates":{
+"latitude": 39.69586,
+"longitude": -104.9828
+},
+"electricalServices":[{"serviceType":"SOLAR"}],
+"sewerServices":[{"serviceType":"SEPTIC_PRIVATE"}],
+"waterServices":[{"serviceType":"PUBLIC"}],
+"fuelServices":[{"serviceType":"NATURAL_GAS"}],
+"floorLivableArea": 1092.7,
+"floorArea": 1354.5,
+"gla": 0,
+"finishedArea": 206.3,
+"unfinishedArea": 481.2,
+"totalArea": 1643.8,
+"smartTags":[
+{
+  "isVisible":true,
+  "tagType": "STREET_LEFT",
+  "subCategory": "Street Left",
+  "title": "Street Left",
+  "groupName": "PDAPI",
+  "smartTagObjectId": "cv_26de32134db54c0bb8e87e1106472500",
+  "createdDate": "2024-02-15T17:09:28.428326Z",
+  "hasPhotos": true,
+  "custom": true,
+  "cv_photos":[{
+    "photoType": "ROOM",
+	
+	"photoLatitude": "39.69586181640625",
+	"photoLongitude": "-104.98280334472656",
+	"photoDescription": "Street",
+	"photoTimeSpan": 1708016966,
+	"photoJsonPath": "property.structures[0].units[0].levels[0].rooms[0].smartTags[0]",
+	"photoImgType": "NONE",
+	"photoFileURL": "cv-uat-uat-photos/65cd15a52f37c9000776e308/custom/25c1acc5e738420cacaa9c6e46d67c73.jpg"
+	
+  }]
+ 
+}],
+ "structures":[{
+  "cv_finishedFloorArea":206.3,
+  "cv_nonGlaFinishedFloorArea":481.2,
+  "cv_glaFinishedFloorArea":0,
+  "cv_unfinishedFloorArea":0,
+  "cv_finishedFloorAreaPercentage":12,
+  "cv_grossLivingArea":12,
+  "cv_grossFloorArea":12,
+  "cv_garageArea":12,
+  "units":[
+  {
+  "levels":[{
+   "levelId": "Bd5XjW0rBO",
+   "cv_Label": "Above Grade 1",
+   "cv_finishedFloorArea": 1500,
+   "cv_nonGlaFinishedFloorArea": 0,
+   "cv_glaFinishedFloorArea": 1500,
+   "cv_finishedFloorAreaPercentage": 100,
+   "cv_unfinishedFloorArea": 21,
+   "cv_unfinishedFloorAreaPercentage": 0,
+   "cv_grossFloorArea": 1500,
+   "cv_grossLivingArea": 1500,
+   "cv_garageArea": 0,
+   "rooms":[{
+     "cv_Label": "Street",
+	 "ceiling":12,
+	 "isOutsideArea": true,
+	 "roomId":"eF4zCkZL4o",
+	 "roomName":"Type1",
+	 "connections":["col1","col2"],
+	 "smartTags":[{
+	 "isVisible": true,
+	 "description": null,
+	 "tagType": "STREET_LEFT",
+	 "subCategory": "Street Left",
+	 "title": "Street Left",
+	 "groupName": "PDAPI",
+	 "smartTagObjectId": "cv_26de32134db54c0bb8e87e1106472500",
+	 "createdDate": "2024-02-15T17:09:28.428326Z",
+	 "hasPhotos": true,
+	 "custom": true
+	 }]
+	 
+   }]
+  }]
+  }]
+}]
+}

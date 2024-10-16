@@ -1,0 +1,1747 @@
+{
+  "title": "InspectionReport v",
+  "required": [
+    "InspectionReport"
+  ],
+  "type": "object",
+  "properties": {
+    "InspectionReport": {
+      "required": [
+        "orderId",
+        "county",
+        "propertyDataCollectorName",
+        "propertyDataCollectorType"
+      ],
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "maxLength": 50,
+          "type": "string",
+          "description": "Order Id"
+        },
+        "appVersion": {
+          "maxLength": 50,
+          "type": "string",
+          "description": "App Version"
+        },
+        "inspectionConfigurationVersion": {
+          "maxLength": 50,
+          "type": "string",
+          "description": "Inspection Configuration Version"
+        },
+        "pdaHyperlink": {
+          "type": "string",
+          "description": "URL/Hyperlink to additional data."
+        },
+        "fileNo": {
+          "maxLength": 50,
+          "type": "string",
+          "description": "File number"
+        },
+        "caseFileID": {
+          "type": "string",
+          "description": "CaseFile ID obtained from DU submissions."
+        },
+        "loanReason": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "lPAKey": {
+          "type": "string"
+        },
+        "sellerId": {
+          "type": "string"
+        },
+        "borrower": {
+          "maxLength": 250,
+          "type": "string"
+        },
+        "borrowerEmail": {
+          "maxLength": 500,
+          "type": "string"
+        },
+        "borrowerPhone": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "county": {
+          "maxLength": 30,
+          "type": "string"
+        },
+        "pdaSubmitterEntity": {
+          "type": "string",
+          "description": "Name of entity making the property data submission."
+        },
+        "propertyDataCollectorName": {
+          "type": "string",
+          "description": "Name of the individual who conducted the property data collection."
+        },
+        "stateCredentialID": {
+          "type": "string",
+          "description": "If the data collector is an appraiser or appraiser trainee, the license or certification number of the appraiser must be provided."
+        },
+        "licenseState": {
+          "maxLength": 2,
+          "type": "string",
+          "description": "If the data collector is an appraiser or appraiser trainee, the state of the appraiser's license or certification must be provided."
+        },
+        "licenseExpiration": {
+          "type": "string",
+          "description": "If the data collector is an appraiser or appraiser trainee, the date on which their license or certification expires must be provided.",
+          "format": "date"
+        },
+        "propertyDataCollectorType": {
+          "enum": [
+            "HOME_OWNER",
+            "APPRAISER",
+            "APPRAISER_TRAINEE",
+            "INSURANCE_INSPECTOR",
+            "REAL_ESTATE_AGENT",
+            "NOTARY_PUBLIC",
+            "SMART_HOME_SERVICES",
+            "PHOTOGRAPHER",
+            "PROPERTY_PRESERVATION_AGENT",
+            "HOME_INSPECTOR"
+          ],
+          "type": "string",
+          "description": "Name of the labor force type of the individual who conducted the property data collection.\n\nDeveloper Note: This field must be auto-populated by the fulfillment vendor."
+        },
+        "cv_appraisalFormType": {
+          "type": "string"
+        },
+        "inspectionType": {
+          "enum": [
+            "INTERIOR",
+            "EXTERIOR",
+            "NONE"
+          ],
+          "type": "string",
+          "description": "Select the best option to describes the type of inspection performed at the property."
+        },
+        "calculationMode": {
+          "type": "string"
+        },
+        "property": {
+          "required": [
+            "address"
+          ],
+          "type": "object",
+          "properties": {
+            "address": {
+              "required": [
+                "streetAddress",
+                "city",
+                "state",
+                "postalCode"
+              ],
+              "type": "object",
+              "properties": {
+                "streetAddress": {
+                  "type": "string",
+                  "description": "House number and street name"
+                },
+                "streetAddress2": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string",
+                  "description": "City"
+                },
+                "state": {
+                  "enum": [
+                    "AL",
+                    "AK",
+                    "AS",
+                    "AZ",
+                    "AR",
+                    "CA",
+                    "CO",
+                    "CT",
+                    "DE",
+                    "DC",
+                    "FL",
+                    "GA",
+                    "GU",
+                    "HI",
+                    "ID",
+                    "IL",
+                    "IN",
+                    "IA",
+                    "KS",
+                    "KY",
+                    "LA",
+                    "ME",
+                    "MD",
+                    "MA",
+                    "MI",
+                    "MN",
+                    "MS",
+                    "MO",
+                    "MT",
+                    "NE",
+                    "NV",
+                    "NH",
+                    "NJ",
+                    "NM",
+                    "NY",
+                    "NC",
+                    "ND",
+                    "MP",
+                    "OH",
+                    "OK",
+                    "OR",
+                    "PA",
+                    "PR",
+                    "RI",
+                    "SC",
+                    "SD",
+                    "TN",
+                    "TX",
+                    "UT",
+                    "VT",
+                    "VA",
+                    "VI",
+                    "WA",
+                    "WV",
+                    "WI",
+                    "WY"
+                  ],
+                  "type": "string",
+                  "description": "State"
+                },
+                "postalCode": {
+                  "type": "string",
+                  "description": "Zip code"
+                },
+                "cv_photos": {
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "photoType"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "photoType": {
+                        "enum": [
+                          "STREET_ADDRESS",
+                          "OTHER"
+                        ],
+                        "type": "string",
+                        "description": "Photo Type"
+                      },
+                      "photoImgType": {
+                        "type": "string",
+                        "description": "Image Type"
+                      },
+                      "photoLatitude": {
+                        "type": "string",
+                        "description": "Photo Latitude"
+                      },
+                      "photoLongitude": {
+                        "type": "string",
+                        "description": "Photo Longitude"
+                      },
+                      "photoDescription": {
+                        "type": "string",
+                        "description": "Photo Description"
+                      },
+                      "photoTimeSpan": {
+                        "type": "string",
+                        "description": "Photo TimeSpan"
+                      },
+                      "photoJsonPath": {
+                        "type": "string",
+                        "description": "Photo Json Path"
+                      },
+                      "photoFileURL": {
+                        "type": "string",
+                        "description": "Photo File URL"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "identification": {
+              "required": [
+                "cv_gpsCoordinates"
+              ],
+              "type": "object",
+              "properties": {
+                "gpsCoordinates": {
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "number",
+                      "description": "Waterfall Subject Latitude as centroid of latitude of all images, OR a specific image likely to be present in all dwellings, such as the kitchen OR a photo of the main entrance of the dwelling. If latitude from images is unavailable, use geocoder from subject address."
+                    },
+                    "longitude": {
+                      "type": "number",
+                      "description": "Waterfall Subject Longitude as centroid of longitude of all images, OR a specific image likely to be present in all dwellings, such as the kitchen OR a photo of the main entrance of the dwelling. If latitude/longitude from images is unavailable, use geocoder from subject address."
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "cv_gpsCoordinates": {
+                  "required": [
+                    "latitude",
+                    "longitude"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "number",
+                      "description": "latitude coming from prepopulated invision Coordinates."
+                    },
+                    "longitude": {
+                      "type": "number",
+                      "description": "longitude coming from prepopulated invision Coordinates"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "propertyAnalysis": {
+              "type": "object",
+              "properties": {
+                "propertyType": {
+                  "enum": [
+                    "SINGLE_FAMILY_DWELLING",
+                    "CONDO",
+                    "MANUFACTURED_HOME",
+                    "UNIT_2_4",
+                    "COOPERATIVE"
+                  ],
+                  "type": "string"
+                },
+                "occupantType": {
+                  "enum": [
+                    "OWNER",
+                    "TENANT",
+                    "VACANT",
+                    "UNKNOWN"
+                  ],
+                  "type": "string"
+                },
+                "propertyConditionRating": {
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                  ],
+                  "type": "string"
+                },
+                "propertyQualityRating": {
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                  ],
+                  "type": "string"
+                },
+                "unitFee": {
+                  "type": "number",
+                  "description": "User to provide the home owners association fee that is due either monthly or annually."
+                },
+                "unitFeePeriodType": {
+                  "enum": [
+                    "MONTHLY",
+                    "ANNUALLY"
+                  ],
+                  "type": "string"
+                },
+                "locationType": {
+                  "enum": [
+                    "URBAN",
+                    "SUBURBAN",
+                    "RURAL"
+                  ],
+                  "type": "string"
+                },
+                "yearsOwned": {
+                  "maxLength": 3,
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            "site": {
+              "type": "object",
+              "properties": {
+                "lot": {
+                  "type": "object",
+                  "properties": {
+                    "lotSize": {
+                      "maxLength": 8,
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "siteUtility": {
+                  "type": "object",
+                  "properties": {
+                    "electricalServices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "serviceType": {
+                            "enum": [
+                              "PUBLIC",
+                              "SOLAR",
+                              "GENERATOR",
+                              "WIND_URBINE",
+                              "HYDRO_ELECTRIC",
+                              "NO_ELECTRICAL_SERVICE"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "sewerServices": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "serviceType"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "serviceType": {
+                            "enum": [
+                              "PUBLIC",
+                              "PRIVATE",
+                              "SEPTIC_PRIVATE",
+                              "SHARED",
+                              "SEPTIC_SHARED",
+                              "CESSPIT",
+                              "NONE"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "waterServices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "serviceType": {
+                            "enum": [
+                              "PUBLIC",
+                              "WELL_PRIVATE",
+                              "WELL_SHARED",
+                              "CISTERN",
+                              "HAULED_WATER"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "fuelServices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "serviceType": {
+                            "enum": [
+                              "NATURAL_GAS",
+                              "PROPANE",
+                              "OIL",
+                              "NONE"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "structures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "yearBuiltEstimate": {
+                    "type": "boolean"
+                  },
+                  "cv_Label": {
+                    "type": "string"
+                  },
+                  "structureType": {
+                    "type": "string"
+                  },
+                  "constructionType": {
+                    "enum": [
+                      "FRAME",
+                      "MASONRY",
+                      "LOG",
+                      "GEODESIC",
+                      "EARTH_BERM",
+                      "MANUFACTURED",
+                      "MODULAR"
+                    ],
+                    "type": "string"
+                  },
+                  "yearBuilt": {
+                    "type": "integer"
+                  },
+                  "units": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cv_Label": {
+                          "type": "string"
+                        },
+                        "unitType": {
+                          "type": "string"
+                        },
+                        "levels": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "levelId": {
+                                "type": "string"
+                              },
+                              "levelName": {
+                                "type": "string"
+                              },
+                              "cv_Label": {
+                                "type": "string"
+                              },
+                              "levelOrder": {
+                                "type": "integer"
+                              },
+                              "livableArea": {
+                                "type": "number"
+                              },
+                              "netArea": {
+                                "type": "number"
+                              },
+                              "cv_netFloorArea": {
+                                "type": "number"
+                              },
+                              "wallFootprintArea": {
+                                "type": "number"
+                              },
+                              "gla": {
+                                "type": "number"
+                              },
+                              "cv_finishedFloorArea": {
+                                "type": "number"
+                              },
+                              "cv_nonGlaFinishedFloorArea": {
+                                "type": "number"
+                              },
+                              "cv_glaFinishedFloorArea": {
+                                "type": "number"
+                              },
+                              "cv_finishedFloorAreaPercentage": {
+                                "type": "number"
+                              },
+                              "cv_unfinishedFloorArea": {
+                                "type": "number"
+                              },
+                              "cv_unfinishedFloorAreaPercentage": {
+                                "type": "number"
+                              },
+                              "finishedArea": {
+                                "type": "number"
+                              },
+                              "unfinishedArea": {
+                                "type": "number"
+                              },
+                              "totalArea": {
+                                "type": "number"
+                              },
+                              "perimeterWallFootprintArea": {
+                                "type": "number"
+                              },
+                              "interiorWallFootprintArea": {
+                                "type": "number"
+                              },
+                              "isLivable": {
+                                "type": "boolean"
+                              },
+                              "cv_grossFloorArea": {
+                                "type": "number"
+                              },
+                              "cv_grossLivingArea": {
+                                "type": "number"
+                              },
+                              "hasFloorPlan": {
+                                "type": "boolean"
+                              },
+                              "floorplanVersion": {
+                                "type": "integer"
+                              },
+                              "wallFinishedNonGlaFootprintArea": {
+                                "type": "number"
+                              },
+                              "wallUnfinishedFootprintArea": {
+                                "type": "number"
+                              },
+                              "wallLivableFootprintArea": {
+                                "type": "number"
+                              },
+                              "cv_garageArea": {
+                                "type": "number"
+                              },
+                              "isFinished": {
+                                "type": "boolean"
+                              },
+                              "breakdownString": {
+                                "type": "string"
+                              },
+                              "rooms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "roomId": {
+                                      "type": "string",
+                                      "description": "Room Id"
+                                    },
+                                    "roomName": {
+                                      "type": "string",
+                                      "description": "User to select the best option to identify the room. \n\nA bedroom is defined as having a window, closet, and door that can be closed. The bedroom should have two means of egress, i.e. the door and window."
+                                    },
+                                    "connections": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string",
+                                        "additionalProperties": false,
+                                        "description": "Contiguous rooms Ids"
+                                      }
+                                    },
+                                    "cv_Label": {
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "type": "string",
+                                      "description": "User to enter free form text to describe the type of room when room type of 'OTHER_ROOM' is selected. The acceptable string length is 100 characters or less."
+                                    },
+                                    "position": {
+                                      "type": "string"
+                                    },
+                                    "floorArea": {
+                                      "type": "number"
+                                    },
+                                    "spaceCount": {
+                                      "type": "integer"
+                                    },
+                                    "wallArea": {
+                                      "type": "number"
+                                    },
+                                    "volume": {
+                                      "type": "number"
+                                    },
+                                    "netArea": {
+                                      "type": "number"
+                                    },
+                                    "ceiling": {
+                                      "type": "string"
+                                    },
+                                    "material": {
+                                      "type": "string"
+                                    },
+                                    "averageHeight": {
+                                      "type": "string"
+                                    },
+                                    "isLivable": {
+                                      "type": "boolean"
+                                    },
+                                    "isGarage": {
+                                      "type": "boolean"
+                                    },
+                                    "affectsFloorArea": {
+                                      "type": "boolean"
+                                    },
+                                    "isOutsideArea": {
+                                      "type": "boolean"
+                                    },
+                                    "isFinished": {
+                                      "type": "boolean"
+                                    },
+                                    "isParking": {
+                                      "type": "boolean"
+                                    },
+                                    "walkthroughUrl": {
+                                      "type": "string"
+                                    },
+                                    "walkthroughUrlEmbedded": {
+                                      "type": "string"
+                                    },
+                                    "hybridWalkthroughUrl": {
+                                      "type": "string"
+                                    },
+                                    "hybridWalkthroughUrlEmbedded": {
+                                      "type": "string"
+                                    },
+                                    "breakdownStringData": {
+                                      "type": "object",
+                                      "properties": {
+                                        "breakdownStringOriginal": {
+                                          "type": "string"
+                                        },
+                                        "breakdownStringArea": {
+                                          "type": "object",
+                                          "properties": {
+                                            "value": {
+                                              "type": "string"
+                                            },
+                                            "formulaElements": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string",
+                                                "additionalProperties": false
+                                              }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        }
+                                      },
+                                      "additionalProperties": false
+                                    },
+                                    "smartTags": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "smartTagObjectId": {
+                                            "type": "string"
+                                          },
+                                          "custom": {
+                                            "type": "boolean"
+                                          },
+                                          "groupName": {
+                                            "type": "string"
+                                          },
+                                          "tagType": {
+                                            "type": "string"
+                                          },
+                                          "title": {
+                                            "type": "string"
+                                          },
+                                          "description": {
+                                            "type": "string"
+                                          },
+                                          "subCategory": {
+                                            "type": "string"
+                                          },
+                                          "category": {
+                                            "type": "string"
+                                          },
+                                          "createdDate": {
+                                            "type": "string"
+                                          },
+                                          "isVisible": {
+                                            "type": "boolean"
+                                          },
+                                          "isOutside": {
+                                            "type": "boolean"
+                                          },
+                                          "viewQuality": {
+                                            "type": "string"
+                                          },
+                                          "viewAffect": {
+                                            "type": "string"
+                                          },
+                                          "condoType": {
+                                            "type": "string"
+                                          },
+                                          "energyRatingType": {
+                                            "type": "string"
+                                          },
+                                          "solarPanelType": {
+                                            "type": "string"
+                                          },
+                                          "gridConnectedType": {
+                                            "type": "boolean"
+                                          },
+                                          "inspectorFirstName": {
+                                            "type": "string"
+                                          },
+                                          "inspectorLastName": {
+                                            "type": "string"
+                                          },
+                                          "inspectionDate": {
+                                            "type": "string"
+                                          },
+                                          "repairCompleted": {
+                                            "type": "boolean"
+                                          },
+                                          "requiredRepair": {
+                                            "type": "boolean"
+                                          },
+                                          "requiredInspection": {
+                                            "type": "boolean"
+                                          },
+                                          "totalStories": {
+                                            "type": "integer"
+                                          },
+                                          "floorLocated": {
+                                            "type": "integer"
+                                          },
+                                          "totalElevators": {
+                                            "type": "integer"
+                                          },
+                                          "timeframe": {
+                                            "type": "string"
+                                          },
+                                          "serialNumber": {
+                                            "type": "string"
+                                          },
+                                          "brand": {
+                                            "type": "string"
+                                          },
+                                          "modelNumber": {
+                                            "type": "string"
+                                          },
+                                          "location": {
+                                            "type": "string"
+                                          },
+                                          "age": {
+                                            "type": "string"
+                                          },
+                                          "deficiencyType": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "typeName": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "deficiencySeverity": {
+                                            "type": "boolean"
+                                          },
+                                          "poolType": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "typeName": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "features": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "typeName": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "materials": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "typeName": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "isWellMaintained": {
+                                            "type": "boolean"
+                                          },
+                                          "maintainedType": {
+                                            "type": "string"
+                                          },
+                                          "windowType": {
+                                            "type": "string"
+                                          },
+                                          "surfaceType": {
+                                            "type": "string"
+                                          },
+                                          "fenceType": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "typeName": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "updateType": {
+                                            "type": "string"
+                                          },
+                                          "spaceCount": {
+                                            "type": "integer"
+                                          },
+                                          "isPoolEmptyAndUncovered": {
+                                            "type": "boolean"
+                                          },
+                                          "isPoolWaterUnsanitary": {
+                                            "type": "boolean"
+                                          },
+                                          "isDamaged": {
+                                            "type": "boolean"
+                                          },
+                                          "isLanaiDamaged": {
+                                            "type": "boolean"
+                                          },
+                                          "hasFenceSurrounding": {
+                                            "type": "boolean"
+                                          },
+                                          "isMissingEquipment": {
+                                            "type": "boolean"
+                                          },
+                                          "additionalData": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "name": {
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "hasPhotos": {
+                                            "type": "boolean"
+                                          },
+                                          "IsGarageBeenConverted": {
+                                            "type": "boolean"
+                                          },
+                                          "cv_photos": {
+                                            "type": "array",
+                                            "items": {
+                                              "required": [
+                                                "photoType"
+                                              ],
+                                              "type": "object",
+                                              "properties": {
+                                                "photoType": {
+                                                  "enum": [
+                                                    "ROOM",
+                                                    "OTHER"
+                                                  ],
+                                                  "type": "string",
+                                                  "description": "Photo Type"
+                                                },
+                                                "photoImgType": {
+                                                  "type": "string",
+                                                  "description": "Image Type"
+                                                },
+                                                "photoLatitude": {
+                                                  "type": "string",
+                                                  "description": "Photo Latitude"
+                                                },
+                                                "photoLongitude": {
+                                                  "type": "string",
+                                                  "description": "Photo Longitude"
+                                                },
+                                                "photoDescription": {
+                                                  "type": "string",
+                                                  "description": "Photo Description"
+                                                },
+                                                "photoTimeSpan": {
+                                                  "type": "integer",
+                                                  "description": "Photo TimeSpan"
+                                                },
+                                                "photoJsonPath": {
+                                                  "type": "string",
+                                                  "description": "Photo Json Path"
+                                                },
+                                                "photoFileURL": {
+                                                  "type": "string",
+                                                  "description": "Photo File URL"
+                                                },
+                                                "confidence": {
+                                                  "type": "object"
+                                                },
+                                                "rank": {
+                                                  "type": "integer"
+                                                },
+                                                "aiProvider": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "additionalProperties": false
+                                            }
+                                          },
+                                          "confidence": {
+                                            "type": "object"
+                                          },
+                                          "aiProvider": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "additionalProperties": false
+                                      }
+                                    },
+                                    "cv_photos": {
+                                      "type": "array",
+                                      "items": {
+                                        "required": [
+                                          "photoType"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                          "photoType": {
+                                            "enum": [
+                                              "ROOM",
+                                              "OTHER"
+                                            ],
+                                            "type": "string",
+                                            "description": "Photo Type"
+                                          },
+                                          "photoImgType": {
+                                            "type": "string",
+                                            "description": "Image Type"
+                                          },
+                                          "photoLatitude": {
+                                            "type": "string",
+                                            "description": "Photo Latitude"
+                                          },
+                                          "photoLongitude": {
+                                            "type": "string",
+                                            "description": "Photo Longitude"
+                                          },
+                                          "photoDescription": {
+                                            "type": "string",
+                                            "description": "Photo Description"
+                                          },
+                                          "photoTimeSpan": {
+                                            "type": "integer",
+                                            "description": "Photo TimeSpan"
+                                          },
+                                          "photoJsonPath": {
+                                            "type": "string",
+                                            "description": "Photo Json Path"
+                                          },
+                                          "photoFileURL": {
+                                            "type": "string",
+                                            "description": "Photo File URL"
+                                          },
+                                          "confidence": {
+                                            "type": "object"
+                                          },
+                                          "rank": {
+                                            "type": "integer"
+                                          },
+                                          "aiProvider": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "additionalProperties": false
+                                      }
+                                    },
+                                    "minHeight": {
+                                      "type": "string"
+                                    },
+                                    "maxHeight": {
+                                      "type": "string"
+                                    },
+                                    "wallFootprint": {
+                                      "type": "number"
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              },
+                              "cv_photos": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "photoType": {
+                                      "enum": [
+                                        "SKETCH",
+                                        "OTHER"
+                                      ],
+                                      "type": "string",
+                                      "description": "Photo Type"
+                                    },
+                                    "photoImgType": {
+                                      "type": "string",
+                                      "description": "Image Type"
+                                    },
+                                    "photoLatitude": {
+                                      "type": "string",
+                                      "description": "Photo Latitude"
+                                    },
+                                    "photoLongitude": {
+                                      "type": "string",
+                                      "description": "Photo Longitude"
+                                    },
+                                    "photoDescription": {
+                                      "type": "string",
+                                      "description": "Photo Description"
+                                    },
+                                    "photoTimeSpan": {
+                                      "type": "integer",
+                                      "description": "Photo TimeSpan"
+                                    },
+                                    "photoJsonPath": {
+                                      "type": "string",
+                                      "description": "Photo Json Path"
+                                    },
+                                    "photoFileURL": {
+                                      "type": "string",
+                                      "description": "Photo File URL"
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "netArea": {
+              "type": "number"
+            },
+            "gla": {
+              "type": "number"
+            },
+            "finishedArea": {
+              "type": "number"
+            },
+            "unfinishedArea": {
+              "type": "number"
+            },
+            "totalArea": {
+              "type": "number"
+            },
+            "numberOfFloors": {
+              "type": "integer"
+            },
+            "numberOfRooms": {
+              "type": "integer"
+            },
+            "perimeterWallFootprintArea": {
+              "type": "number"
+            },
+            "interiorWallFootprintArea": {
+              "type": "number"
+            },
+            "interior": {
+              "type": "object",
+              "properties": {
+                "floorLivableArea": {
+                  "type": "number"
+                },
+                "floorArea": {
+                  "type": "number"
+                },
+                "volumen": {
+                  "type": "number"
+                },
+                "wallArea": {
+                  "type": "number"
+                },
+                "netArea": {
+                  "type": "number"
+                },
+                "wallFootprintArea": {
+                  "type": "number"
+                },
+                "gla": {
+                  "type": "number"
+                },
+                "finishedArea": {
+                  "type": "number"
+                },
+                "unfinishedArea": {
+                  "type": "number"
+                },
+                "totalArea": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            "exterior": {
+              "type": "object",
+              "properties": {
+                "floorArea": {
+                  "type": "number"
+                },
+                "netArea": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            "features": {
+              "type": "object",
+              "properties": {
+                "bedrooms": {
+                  "type": "integer"
+                },
+                "bathrooms": {
+                  "type": "number"
+                },
+                "pool": {
+                  "type": "integer"
+                },
+                "garage": {
+                  "type": "integer"
+                },
+                "plumbing": {
+                  "type": "number"
+                },
+                "bathtubs": {
+                  "type": "integer"
+                },
+                "fireplace": {
+                  "type": "integer"
+                },
+                "exteriorDoors": {
+                  "type": "number"
+                },
+                "interiorDoors": {
+                  "type": "number"
+                },
+                "windows": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            "cv_Metrics": {
+              "type": "object",
+              "properties": {
+                "numberOfFloors": {
+                  "type": "integer"
+                },
+                "numberOfRooms": {
+                  "type": "integer"
+                },
+                "aboveGrade": {
+                  "type": "object",
+                  "properties": {
+                    "gla": {
+                      "type": "integer"
+                    },
+                    "rooms": {
+                      "type": "integer"
+                    },
+                    "bedrooms": {
+                      "type": "integer"
+                    },
+                    "fullBathrooms": {
+                      "type": "integer"
+                    },
+                    "halfBathrooms": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "belowGrade": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "integer"
+                    },
+                    "recRooms": {
+                      "type": "integer"
+                    },
+                    "bedrooms": {
+                      "type": "integer"
+                    },
+                    "fullBathrooms": {
+                      "type": "integer"
+                    },
+                    "halfBathrooms": {
+                      "type": "integer"
+                    },
+                    "finished": {
+                      "type": "integer"
+                    },
+                    "othersRooms": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "smartTags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "smartTagObjectId": {
+                    "type": "string"
+                  },
+                  "custom": {
+                    "type": "boolean"
+                  },
+                  "groupName": {
+                    "type": "string"
+                  },
+                  "tagType": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "subCategory": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "createdDate": {
+                    "type": "string"
+                  },
+                  "isVisible": {
+                    "type": "boolean"
+                  },
+                  "isOutside": {
+                    "type": "boolean"
+                  },
+                  "additionalData": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "hasPhotos": {
+                    "type": "boolean"
+                  },
+                  "cv_photos": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "photoType"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "photoType": {
+                          "enum": [
+                            "ROOM",
+                            "OTHER"
+                          ],
+                          "type": "string",
+                          "description": "Photo Type"
+                        },
+                        "photoImgType": {
+                          "type": "string",
+                          "description": "Image Type"
+                        },
+                        "photoLatitude": {
+                          "type": "string",
+                          "description": "Photo Latitude"
+                        },
+                        "photoLongitude": {
+                          "type": "string",
+                          "description": "Photo Longitude"
+                        },
+                        "photoDescription": {
+                          "type": "string",
+                          "description": "Photo Description"
+                        },
+                        "photoTimeSpan": {
+                          "type": "integer",
+                          "description": "Photo TimeSpan"
+                        },
+                        "photoJsonPath": {
+                          "type": "string",
+                          "description": "Photo Json Path"
+                        },
+                        "photoFileURL": {
+                          "type": "string",
+                          "description": "Photo File URL"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "cv_photos": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "photoType": {
+                    "enum": [
+                      "SKETCH",
+                      "OTHER"
+                    ],
+                    "type": "string",
+                    "description": "Photo Type"
+                  },
+                  "photoImgType": {
+                    "type": "string",
+                    "description": "Image Type"
+                  },
+                  "photoLatitude": {
+                    "type": "string",
+                    "description": "Photo Latitude"
+                  },
+                  "photoLongitude": {
+                    "type": "string",
+                    "description": "Photo Longitude"
+                  },
+                  "photoDescription": {
+                    "type": "string",
+                    "description": "Photo Description"
+                  },
+                  "photoTimeSpan": {
+                    "type": "integer",
+                    "description": "Photo TimeSpan"
+                  },
+                  "photoJsonPath": {
+                    "type": "string",
+                    "description": "Photo Json Path"
+                  },
+                  "photoFileURL": {
+                    "type": "string",
+                    "description": "Photo File URL"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "cv_propertyDataCollectorUserType": {
+          "enum": [
+            "Borrower",
+            "Appraiser",
+            "DataCollector"
+          ],
+          "type": "string",
+          "description": "Type of the the data collector."
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "required": [
+              "roleType",
+              "state",
+              "postalCode",
+              "credentialType"
+            ],
+            "type": "object",
+            "properties": {
+              "userId": {
+                "type": "string",
+                "description": "User Identifier of the party associated with the inspection report."
+              },
+              "roleType": {
+                "enum": [
+                  "SUPERVISOR",
+                  "APPRAISER",
+                  "APPRAISER_TRAINEE",
+                  "INSURANCE_INSPECTOR",
+                  "REAL_ESTATE_AGENT",
+                  "NOTARY_PUBLIC",
+                  "SMART_HOME_SERVICES",
+                  "PHOTOGRAPHER",
+                  "PROPERTY_PRESERVATION_AGENT",
+                  "HOME_INSPECTOR"
+                ],
+                "type": "string",
+                "description": "Select the best option that describes the role of the party in the inspection report."
+              },
+              "firstName": {
+                "type": "string",
+                "description": "First name of the party associated with the inspection report."
+              },
+              "lastName": {
+                "type": "string",
+                "description": "Last name of the party associated with the inspection report."
+              },
+              "companyName": {
+                "type": "string",
+                "description": "Company name of the party associated with the inspection report."
+              },
+              "streetAddress": {
+                "type": "string",
+                "description": "The street address of the party associated with the inspection report."
+              },
+              "city": {
+                "type": "string",
+                "description": "The city name where the associated party is located."
+              },
+              "state": {
+                "enum": [
+                  "AL",
+                  "AK",
+                  "AS",
+                  "AZ",
+                  "AR",
+                  "CA",
+                  "CO",
+                  "CT",
+                  "DE",
+                  "DC",
+                  "FL",
+                  "GA",
+                  "GU",
+                  "HI",
+                  "ID",
+                  "IL",
+                  "IN",
+                  "IA",
+                  "KS",
+                  "KY",
+                  "LA",
+                  "ME",
+                  "MD",
+                  "MA",
+                  "MI",
+                  "MN",
+                  "MS",
+                  "MO",
+                  "MT",
+                  "NE",
+                  "NV",
+                  "NH",
+                  "NJ",
+                  "NM",
+                  "NY",
+                  "NC",
+                  "ND",
+                  "MP",
+                  "OH",
+                  "OK",
+                  "OR",
+                  "PA",
+                  "PR",
+                  "RI",
+                  "SC",
+                  "SD",
+                  "TN",
+                  "TX",
+                  "UT",
+                  "VT",
+                  "VA",
+                  "VI",
+                  "WA",
+                  "WV",
+                  "WI",
+                  "WY"
+                ],
+                "type": "string",
+                "description": "The state where the associated party is located."
+              },
+              "postalCode": {
+                "type": "string",
+                "description": "The postal code where the associated party is located."
+              },
+              "phone": {
+                "type": "string",
+                "description": "The phone number of the associated party."
+              },
+              "email": {
+                "type": "string",
+                "description": "The email address of the associated party."
+              },
+              "inspectionType": {
+                "enum": [
+                  "INTERIOR",
+                  "EXTERIOR",
+                  "NONE"
+                ],
+                "type": "string",
+                "description": "Select the best option to describes the type of inspection performed at the property."
+              },
+              "inspectionDate": {
+                "type": "string",
+                "description": "The date that the property inspection was performed.",
+                "format": "date"
+              },
+              "signatureDate": {
+                "type": "string",
+                "description": "The date that the inspection report was signed by the party.",
+                "format": "date"
+              },
+              "credentialType": {
+                "enum": [
+                  "LICENSE",
+                  "CERTIFICATE",
+                  "OTHER",
+                  "NONE"
+                ],
+                "type": "string",
+                "description": "Select the best option to describes the type of professional credentials that the party holds."
+              },
+              "credentialId": {
+                "type": "string",
+                "description": "The ID of the professional credentials held by the party role."
+              },
+              "credentialState": {
+                "maxLength": 2,
+                "type": "string",
+                "description": "The ID number of the professional credentials held by the party role."
+              },
+              "credentialExpDate": {
+                "type": "string",
+                "description": "The expiration date of the role's professional credentials.",
+                "format": "date"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "cv_lender": {
+          "type": "object",
+          "properties": {
+            "cv_name": {
+              "type": "string"
+            },
+            "cv_unparsedAddress": {
+              "type": "string"
+            },
+            "cv_emailAddress": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "cv_appraislManagementCompany": {
+          "type": "object",
+          "properties": {
+            "cv_amcName": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "eSignatureDate": {
+          "type": "string",
+          "description": "ESignature Date",
+          "format": "date"
+        },
+        "scanDate": {
+          "type": "string",
+          "description": "Scan Date"
+        },
+        "scanningInfo": {
+          "type": "object",
+          "properties": {
+            "generatedDate": {
+              "type": "string"
+            },
+            "scannedDate": {
+              "type": "string"
+            },
+            "createdDateAndTime": {
+              "type": "string"
+            },
+            "submittedDateAndTime": {
+              "type": "string"
+            },
+            "finishedDateAndTime": {
+              "type": "string"
+            },
+            "firstSpinCapturedAt": {
+              "type": "string"
+            },
+            "lastSpinCapturedAt": {
+              "type": "string"
+            },
+            "scannerEmail": {
+              "type": "string"
+            },
+            "scannerName": {
+              "type": "string"
+            },
+            "scannerId": {
+              "type": "string"
+            },
+            "scannerFirstName": {
+              "type": "string"
+            },
+            "scannerLastName": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "aMCName": {
+          "type": "string"
+        },
+        "contractPrice": {
+          "type": "number"
+        },
+        "lenderContactInformation": {
+          "type": "string"
+        },
+        "dateOfContract": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

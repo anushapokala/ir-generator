@@ -1,0 +1,6 @@
+orderId,streetAddress,streetAddress2,city,state,postalCode,county,propertyDataCollectorName,propertyDataCollectorType,UserId,firstName,lastName,companyName,pdc_streetAddress,pdc_city,pdc_state,pdc_postalCode,phone,email
+CVN3D001,3033 N 425 E,,North Ogden,UT,84414,Weber,Jared Priesler,PHOTOGRAPHER,111953,Jared,Priesler,DataMaster,3033 N 425 E,North Ogden,UT,84414,(801) 940-0966,JPreisler@gmail.com
+CVN3D002,318 Defrance Ct,,Golden,CO,80401,Jefferson,Scott Greenwood,PHOTOGRAPHER,105485,Scott,Greenwood,Class Valuation,318 Defrance Ct,Golden,CO,80401,(303) 601-6790,sgreenwood@classvaluation.com
+CVN3D003,21625 Lange St.,,Saint Clair Shores,MI,48080,Macomb,Matt,PHOTOGRAPHER,106453,Matt,Bowen,Class Valuation,21625 Lange St.,Saint Clair Shores,MI,48080,(248) 955-9404,mbowen@classvaluation.com
+CVN3D004,10705 Huntley Pl,,Silver Spring,MD,20902,Montgomery,Tim Staudenmaier,PHOTOGRAPHER,105749,Tim,Staudenmaier,Class Valuation,10705 Huntley Pl,Silver Spring,MD,20902,(720) 305-6764,tstaudenmaier@classvaluation.com
+CVN3D005,460 W. Canfield St.,#104,Detroit,MI,48201,Wayne,Jenna Bush,PHOTOGRAPHER,,Jenna,Bush,Class Valuation,"460 W. Canfield St, #104",Detroit,MI,48201,(248) 842-8183,Bellaglrl169@gmail.com
