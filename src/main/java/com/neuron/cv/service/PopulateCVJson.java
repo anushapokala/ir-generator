@@ -95,7 +95,7 @@ public class PopulateCVJson {
     }
 
     identification.setGpsCoordinates(gpsCoordinates);
-    identification.setCv_gpsCoordinates(cvGpsCoordinates);
+//    identification.setCv_gpsCoordinates(cvGpsCoordinates);
 
     PropertyAnalysis propertyAnalysis = new PropertyAnalysis();
     Site site = Site.builder().build();
@@ -132,40 +132,40 @@ public class PopulateCVJson {
     if (!CollectionUtils.isEmpty(instaplan.getStructures())) {
       for (StructureDto structureDto : instaplan.getStructures()) {
         Structure structure = new Structure();
-        structure.setCv_Label(structureDto.getCv_Label());
+//        structure.setCv_Label(structureDto.getCv_Label());
         structure.setStructureType(structureDto.getStructureType());
         ArrayList<Unit> units = new ArrayList<Unit>();
         if (!CollectionUtils.isEmpty(structureDto.getUnits())) {
           for (UnitDto unitDto : structureDto.getUnits()) {
             Unit unit = new Unit();
-            unit.setCv_Label(unitDto.getCv_Label());
-            unit.setUnitType(unitDto.getUnitType());
+//            unit.setCv_Label(unitDto.getCv_Label());
+//            unit.setUnitType(unitDto.getUnitType());
             ArrayList<Level> levels = new ArrayList<Level>();
             if (!CollectionUtils.isEmpty(unitDto.getLevels())) {
               for (LevelDto levelDto : unitDto.getLevels()) {
                 Level level = new Level();
-                level.setLevelId(levelDto.getLevelId());
-                level.setCv_Label(levelDto.getCv_Label());
-                level.setCv_finishedFloorArea(levelDto.getCv_finishedFloorArea());
-                level.setCv_nonGlaFinishedFloorArea(levelDto.getCv_nonGlaFinishedFloorArea());
-                level.setCv_glaFinishedFloorArea(levelDto.getCv_glaFinishedFloorArea());
-                level.setCv_finishedFloorAreaPercentage(
-                    levelDto.getCv_finishedFloorAreaPercentage());
-                level.setCv_unfinishedFloorArea(levelDto.getCv_unfinishedFloorArea());
-                level.setCv_unfinishedFloorAreaPercentage(
-                    levelDto.getCv_unfinishedFloorAreaPercentage());
-                level.setCv_grossFloorArea(levelDto.getCv_grossFloorArea());
-                level.setCv_grossLivingArea(levelDto.getCv_grossLivingArea());
-                level.setCv_garageArea(levelDto.getCv_garageArea());
-
-                level.setFinishedArea(levelDto.getFinishedArea());
-                level.setGla(levelDto.getGla());
-                level.setNetArea(levelDto.getNetArea());
-                level.setLivableArea(levelDto.getLivableArea());
-                level.setUnfinishedArea(levelDto.getUnfinishedArea());
-                level.setTotalArea(levelDto.getTotalArea());
-
-                level.setLevelName(levelDto.getLevelName());
+//                level.setLevelId(levelDto.getLevelId());
+//                level.setCv_Label(levelDto.getCv_Label());
+//                level.setCv_finishedFloorArea(levelDto.getCv_finishedFloorArea());
+//                level.setCv_nonGlaFinishedFloorArea(levelDto.getCv_nonGlaFinishedFloorArea());
+//                level.setCv_glaFinishedFloorArea(levelDto.getCv_glaFinishedFloorArea());
+//                level.setCv_finishedFloorAreaPercentage(
+//                    levelDto.getCv_finishedFloorAreaPercentage());
+//                level.setCv_unfinishedFloorArea(levelDto.getCv_unfinishedFloorArea());
+//                level.setCv_unfinishedFloorAreaPercentage(
+//                    levelDto.getCv_unfinishedFloorAreaPercentage());
+//                level.setCv_grossFloorArea(levelDto.getCv_grossFloorArea());
+//                level.setCv_grossLivingArea(levelDto.getCv_grossLivingArea());
+//                level.setCv_garageArea(levelDto.getCv_garageArea());
+//
+//                level.setFinishedArea(levelDto.getFinishedArea());
+//                level.setGla(levelDto.getGla());
+//                level.setNetArea(levelDto.getNetArea());
+//                level.setLivableArea(levelDto.getLivableArea());
+//                level.setUnfinishedArea(levelDto.getUnfinishedArea());
+//                level.setTotalArea(levelDto.getTotalArea());
+//
+//                level.setLevelName(levelDto.getLevelName());
                 
                 ArrayList<CvPhoto> levelCVPhotos = new ArrayList<>();
                 if (!CollectionUtils.isEmpty(levelDto.getCv_photos())) {
@@ -177,15 +177,15 @@ public class PopulateCVJson {
                 if (!CollectionUtils.isEmpty(levelDto.getRooms())) {
                   for (RoomDto roomDto : levelDto.getRooms()) {
                     Room room = new Room();
-                    room.setCv_Label(roomDto.getCv_Label());
-                    room.setCeiling(roomDto.getCeiling());
-                    room.setIsOutsideArea(roomDto.getIsOutsideArea());
-                    room.setRoomId(roomDto.getRoomId());
-                    room.setRoomName(roomDto.getRoomName());
-                    room.setPosition(roomDto.getPosition());
-                    room.setConnections(roomDto.getConnections());
+//                    room.setCv_Label(roomDto.getCv_Label());
+//                    room.setCeiling(roomDto.getCeiling());
+//                    room.setIsOutsideArea(roomDto.getIsOutsideArea());
+//                    room.setRoomId(roomDto.getRoomId());
+//                    room.setRoomName(roomDto.getRoomName());
+//                    room.setPosition(roomDto.getPosition());
+//                    room.setConnections(roomDto.getConnections());
                     room.setCv_photos(roomDto.getCv_photos());
-                    room.setIsGarage(roomDto.getIsGarage());
+//                    room.setIsGarage(roomDto.getIsGarage());
                     ArrayList<SmartTag> roomSmartTags = new ArrayList<SmartTag>();
                     if (!CollectionUtils.isEmpty(roomDto.getSmartTags())) {
                       for (SmartTagDto rmSmartTagDto : roomDto.getSmartTags()) {
@@ -208,9 +208,9 @@ public class PopulateCVJson {
                             cvphoto.setPhotoType(rmcv_photo.getPhotoType());
                             cvphoto.setPhotoLatitude(rmcv_photo.getPhotoLatitude());
                             cvphoto.setPhotoLongitude(rmcv_photo.getPhotoLongitude());
-                            cvphoto.setPhotoImgType(rmcv_photo.getPhotoImgType());
+//                            cvphoto.setPhotoImgType(rmcv_photo.getPhotoImgType());
                             cvphoto.setPhotoTimeSpan(rmcv_photo.getPhotoTimeSpan());
-                            cvphoto.setPhotoJsonPath(rmcv_photo.getPhotoJsonPath());
+//                            cvphoto.setPhotoJsonPath(rmcv_photo.getPhotoJsonPath());
                             cvphoto.setPhotoFileURL(rmcv_photo.getPhotoFileURL());
                             roomSmartTag.getCv_photos().add(cvphoto);
                           }
@@ -218,7 +218,7 @@ public class PopulateCVJson {
                         }
                       }
                     }
-                    room.setSmartTags(roomSmartTags);
+//                    room.setSmartTags(roomSmartTags);
                     rooms.add(room);
                   }
                 }
@@ -304,20 +304,20 @@ public class PopulateCVJson {
     property.setIdentification(identification);
     property.setPropertyAnalysis(propertyAnalysis);
     property.setSite(site);
-    property.setStructures(structures);
-    property.setInterior(interior);
-    property.setExterior(exterior);
-    property.setFeatures(features);
-    property.setCv_Metrics(cvMetrics);
-    property.setSmartTags(propertysmartTags);
+//    property.setStructures(structures);
+//    property.setInterior(interior);
+//    property.setExterior(exterior);
+//    property.setFeatures(features);
+//    property.setCv_Metrics(cvMetrics);
+//    property.setSmartTags(propertysmartTags);
 
-    property.setGla(instaplan.getGla());
-    property.setFinishedArea(instaplan.getFinishedArea());
-    property.setTotalArea(instaplan.getTotalArea());
-    property.setUnfinishedArea(instaplan.getUnfinishedArea());
-    property.setNetArea(instaplan.getNetArea());
-    property.setNumberOfFloors(instaplan.getNumberOfFloors());
-    property.setNumberOfRooms(instaplan.getNumberOfRooms());
+//    property.setGla(instaplan.getGla());
+//    property.setFinishedArea(instaplan.getFinishedArea());
+//    property.setTotalArea(instaplan.getTotalArea());
+//    property.setUnfinishedArea(instaplan.getUnfinishedArea());
+//    property.setNetArea(instaplan.getNetArea());
+//    property.setNumberOfFloors(instaplan.getNumberOfFloors());
+//    property.setNumberOfRooms(instaplan.getNumberOfRooms());
 
 
 
@@ -341,10 +341,10 @@ public class PopulateCVJson {
 
     // setting inspectionReport fields
     inspectionReport.setProperty(property);
-    inspectionReport.setScanningInfo(scanningInfo);
-    inspectionReport.setCv_lender(cvLender);
-    inspectionReport.setCv_appraislManagementCompany(cvAppraislManagementCompany);
-    inspectionReport.setParties(parties);
+//    inspectionReport.setScanningInfo(scanningInfo);
+//    inspectionReport.setCv_lender(cvLender);
+//    inspectionReport.setCv_appraislManagementCompany(cvAppraislManagementCompany);
+//    inspectionReport.setParties(parties);
 
     // final setting
     root.setInspectionReport(mapInspectionReportFields(map, inspectionReport));
@@ -368,8 +368,8 @@ public class PopulateCVJson {
             _address.setState(getValueFromMap(map, "state"));
           if (key.equalsIgnoreCase("postalCode"))
             _address.setPostalCode(getValueFromMap(map, "postalCode"));
-          if (key.equalsIgnoreCase("streetAddress2"))
-            _address.setStreetAddress2(getValueFromMap(map, "streetAddress2"));
+//          if (key.equalsIgnoreCase("streetAddress2"))
+//            _address.setStreetAddress2(getValueFromMap(map, "streetAddress2"));
         }
       }
     }
@@ -427,10 +427,10 @@ public class PopulateCVJson {
       keys = map.keySet();
       if (!keys.isEmpty()) {
         for (String key : keys) {
-          if (key.equalsIgnoreCase("orderId"))
-            party.setOrderId(getValueFromMap(map, "orderId"));
-          if (key.equalsIgnoreCase("county"))
-            party.setCounty(getValueFromMap(map, "county"));
+//          if (key.equalsIgnoreCase("orderId"))
+//            party.setOrderId(getValueFromMap(map, "orderId"));
+//          if (key.equalsIgnoreCase("county"))
+//            party.setCounty(getValueFromMap(map, "county"));
           if (key.equalsIgnoreCase("propertyDataCollectorName"))
             party.setPropertyDataCollectorName(getValueFromMap(map, "propertyDataCollectorName"));
           if (key.equalsIgnoreCase("propertyDataCollectorType"))

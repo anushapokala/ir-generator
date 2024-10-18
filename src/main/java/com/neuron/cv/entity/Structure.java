@@ -7,12 +7,19 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Structure {
-  public String cv_Label;
   public String structureType;
-  public ArrayList<Unit> units;
+  public String structureArea;
+  public String attachmentType;
+  public ArrayList<String> foundationType;
+  public String constructionStatus;
   public String constructionType;
+  public boolean containsRooms;
   public int yearBuilt;
   public boolean yearBuiltEstimate;
+  public ArrayList<ExteriorDeficiencies> exteriorDeficiencies;
+  public ArrayList<ExteriorUpdates> exteriorUpdates;
+  public ArrayList<CvPhoto> cv_photos;
+  public ArrayList<Unit> units;
 //  public double cv_finishedFloorArea;
 //  public double cv_nonGlaFinishedFloorArea;
 //  public double cv_glaFinishedFloorArea;

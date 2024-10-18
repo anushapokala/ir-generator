@@ -8,15 +8,15 @@ import lombok.Setter;
 public class CvPhoto {
   
   public String photoType;
-  public String photoId;
+//  public String photoId;
   public String photoLatitude;
   public String photoLongitude;
   public String photoDescription;
   public Long photoTimeSpan;
-  public String photoJsonPath;
-  public String photoImgType;
   public String photoFileURL;
-  public String aiProvider;
+//  public String photoJsonPath;
+//  public String photoImgType;
+//  public String aiProvider;
  // public int rank;
-  public Object confidence;
+//  public Object confidence;
 }

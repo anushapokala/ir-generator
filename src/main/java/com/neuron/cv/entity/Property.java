@@ -9,23 +9,13 @@ import lombok.Setter;
 @Getter
 @Builder
 public class Property {
+  public String propertyType;
+  public boolean propertyOccupied;
   public Address address;
   public Identification identification;
-  public PropertyAnalysis propertyAnalysis;
   public Site site;
-  public ArrayList<Structure> structures;
-  public Double netArea;
-  public Double gla;
-  public Double finishedArea;
-  public Double unfinishedArea;
-  public Double totalArea;
-  public Integer numberOfFloors;
-  public Double perimeterWallFootprintArea;
-  public Double interiorWallFootprintArea;
-  public Integer numberOfRooms;
-  public Interior interior;
-  public Exterior exterior;
-  public Features features;
-  public CvMetrics cv_Metrics;
-  public ArrayList<PropertySmartTag> smartTags;
+  public ArrayList<Structure> buildings;
+  public PropertyAnalysis propertyAnalysis;
+  public PropertyCvPhoto cv_photos;
+  public Ancillary ancillary;
 }

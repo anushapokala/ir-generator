@@ -221,7 +221,7 @@ public class ScanServiceimpl {
 					for (PropertyCvPhoto cv_photo : propertySmartTag.getCv_photos()) {
 						String jsonPath = "property.smartTags[" + instaplanDto.getSmartTags().indexOf(propertySmartTag)
 								+ "]";
-						cv_photo.setPhotoJsonPath(jsonPath);
+//						cv_photo.setPhotoJsonPath(jsonPath);
 					}
 			}
 
@@ -241,7 +241,7 @@ public class ScanServiceimpl {
 												+ instaplanDto.getStructures().indexOf(structure) + "]" + ".units["
 												+ structure.getUnits().indexOf(unit) + "].levels["
 												+ unit.getLevels().indexOf(level) + "]";
-										levelCvPhoto.setPhotoJsonPath(levelCvPhotoJsonPath);
+//										levelCvPhoto.setPhotoJsonPath(levelCvPhotoJsonPath);
 									}
 
 								if (!CollectionUtils.isEmpty(level.getRooms()))
@@ -258,7 +258,7 @@ public class ScanServiceimpl {
 																+ "].rooms[" + level.getRooms().indexOf(room)
 																+ "].smartTags[" + room.getSmartTags().indexOf(smartTag)
 																+ "]";
-														cv_photo.setPhotoJsonPath(jsonPath);
+//														cv_photo.setPhotoJsonPath(jsonPath);
 													}
 											}
 										// cv_photos inside room
@@ -269,7 +269,7 @@ public class ScanServiceimpl {
 														+ ".units[" + structure.getUnits().indexOf(unit) + "].levels["
 														+ unit.getLevels().indexOf(level) + "].rooms["
 														+ level.getRooms().indexOf(room) + "]";
-												roomCv_photo.setPhotoJsonPath(jsonPath);
+//												roomCv_photo.setPhotoJsonPath(jsonPath);
 											}
 									}
 							}

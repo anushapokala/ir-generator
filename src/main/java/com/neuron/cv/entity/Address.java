@@ -8,9 +8,10 @@ import lombok.Setter;
 @Getter
 public class Address {
   public String streetAddress;
-  public String streetAddress2;
+  public String unitNumber;
   public String city;
   public String state;
+  public String Country;
   public String postalCode;
   public ArrayList<PropertyCvPhoto> cv_photos;
 }

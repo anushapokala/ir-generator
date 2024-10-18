@@ -9,5 +9,8 @@ import lombok.Setter;
 @Builder
 public class Site {
   public Lot lot;
+  public SiteFeature siteFeature;
+  public OffSiteFeature offSiteFeature;
   public SiteUtility siteUtility;
+  
 }

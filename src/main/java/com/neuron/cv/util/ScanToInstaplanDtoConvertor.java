@@ -457,7 +457,7 @@ public class ScanToInstaplanDtoConvertor {
                 }
               }
               case "notes" -> roomCVPhoto.setPhotoDescription(jsonObject.getString(key));
-              case "type" -> roomCVPhoto.setPhotoImgType(jsonObject.getString(key));
+//              case "type" -> roomCVPhoto.setPhotoImgType(jsonObject.getString(key));
               case "photo_captured_time" -> {
                 if (jsonObject.getString(key) != null && !jsonObject.getString(key).isBlank()) {
                   // MM-dd-yyyy-HH-mm-ss

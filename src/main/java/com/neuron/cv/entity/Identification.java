@@ -9,5 +9,5 @@ import lombok.Setter;
 @Builder
 public class Identification {
   public GpsCoordinates gpsCoordinates;
-  public CvGpsCoordinates cv_gpsCoordinates;
+ // public CvGpsCoordinates cv_gpsCoordinates;
 }
