@@ -24,7 +24,7 @@ import com.neuron.cv.dto.UnitDto;
 import com.neuron.cv.entity.CvGpsCoordinates;
 import com.neuron.cv.entity.CvPhoto;
 import com.neuron.cv.entity.ElectricalService;
-import com.neuron.cv.entity.FuelService;
+import com.neuron.cv.entity.GasService;
 import com.neuron.cv.entity.GpsCoordinates;
 import com.neuron.cv.entity.SewerService;
 import com.neuron.cv.entity.WaterService;
@@ -59,8 +59,8 @@ public class ScanToInstaplanDtoConvertor {
               case CVConstants.ELECTRICAL_SERVICES -> {
                 if (CollectionUtils.isEmpty(instaplanDto.getElectricalServices()))
                   instaplanDto.setElectricalServices(new ArrayList<>());
-                instaplanDto.getElectricalServices().add(
-                    new ElectricalService(object.getString(CVConstants.SERVICE_TYPE).toString()));
+                instaplanDto.getElectricalServices()
+                .add(new ElectricalService(object.getString(CVConstants.SERVICE_TYPE).toString()));
               }
 
               case CVConstants.SEWER_SERVICES -> {
@@ -77,11 +77,11 @@ public class ScanToInstaplanDtoConvertor {
                     .add(new WaterService(object.getString(CVConstants.SERVICE_TYPE).toString()));
               }
 
-              case CVConstants.FUEL_SERVICES -> {
-                if (CollectionUtils.isEmpty(instaplanDto.getFuelServices()))
-                  instaplanDto.setFuelServices(new ArrayList<>());
-                instaplanDto.getFuelServices()
-                    .add(new FuelService(object.getString(CVConstants.SERVICE_TYPE).toString()));
+              case CVConstants.GAS_SERVICES -> {
+                if (CollectionUtils.isEmpty(instaplanDto.getGasServices()))
+                  instaplanDto.setGasServices(new ArrayList<>());
+                instaplanDto.getGasServices()
+                    .add(new GasService(object.getString(CVConstants.SERVICE_TYPE).toString()));
               }
               default -> throw new IllegalArgumentException(
                   "Unexpected value: " + object.get(CVConstants.SERVICE_NAME));

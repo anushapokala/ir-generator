@@ -8,5 +8,5 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class SewerService {
-  public String serviceType;
+  public String sewerType;
 }

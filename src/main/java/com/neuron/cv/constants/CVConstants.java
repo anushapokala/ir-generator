@@ -6,6 +6,7 @@ public class CVConstants {
   public static final String SEWER_SERVICES = "Sewer";
   public static final String WATER_SERVICES = "Water";
   public static final String FUEL_SERVICES = "Fuel";
+  public static final String GAS_SERVICES = "Gas";
   
   public static final String SERVICE_NAME = "service_name";
   public static final String SERVICE_TYPE = "service_type";

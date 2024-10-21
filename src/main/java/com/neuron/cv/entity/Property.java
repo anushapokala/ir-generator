@@ -1,6 +1,6 @@
 package com.neuron.cv.entity;
 
-import java.util.ArrayList;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +14,8 @@ public class Property {
   public Address address;
   public Identification identification;
   public Site site;
-  public ArrayList<Structure> buildings;
-  public PropertyAnalysis propertyAnalysis;
-  public PropertyCvPhoto cv_photos;
+  public List<Structure> buildings;
+  //public PropertyAnalysis propertyAnalysis;
+  public List<PropertyCvPhoto> cv_photos;
   public Ancillary ancillary;
 }

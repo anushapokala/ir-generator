@@ -8,6 +8,7 @@ import com.neuron.cv.entity.ElectricalService;
 import com.neuron.cv.entity.Exterior;
 import com.neuron.cv.entity.Features;
 import com.neuron.cv.entity.FuelService;
+import com.neuron.cv.entity.GasService;
 import com.neuron.cv.entity.GpsCoordinates;
 import com.neuron.cv.entity.Interior;
 import com.neuron.cv.entity.SewerService;
@@ -31,7 +32,8 @@ public class InstaplanDto {
   public ArrayList<ElectricalService> electricalServices;
   public ArrayList<SewerService> sewerServices;
   public ArrayList<WaterService> waterServices;
-  public ArrayList<FuelService> fuelServices;
+  public ArrayList<GasService> gasServices;
+  //public ArrayList<FuelService> fuelServices;
   public Double floorLivableArea;
   public Double floorArea;
   public Double volumen;

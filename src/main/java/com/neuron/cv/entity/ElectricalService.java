@@ -8,5 +8,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class ElectricalService {
-  public String serviceType;
+  //public boolean offGridService;
+  public String electricalType;
 }

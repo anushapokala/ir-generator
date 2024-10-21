@@ -11,6 +11,7 @@ import com.neuron.cv.dto.InstaplanDto;
 import com.neuron.cv.dto.ParamDTO;
 import com.neuron.cv.entity.ElectricalService;
 import com.neuron.cv.entity.FuelService;
+import com.neuron.cv.entity.GasService;
 import com.neuron.cv.entity.Root;
 import com.neuron.cv.entity.SewerService;
 import com.neuron.cv.entity.WaterService;
@@ -62,11 +63,13 @@ public class InspectionReportService {
     ArrayList<ElectricalService> electricalServices = new ArrayList<ElectricalService>();
     ArrayList<SewerService> sewerServices = new ArrayList<>();
     ArrayList<WaterService> waterServices = new ArrayList<>();
-    ArrayList<FuelService> fuelServices = new ArrayList<>();
+    ArrayList<GasService> gasServices = new ArrayList<>();
+    //ArrayList<FuelService> fuelServices = new ArrayList<>();
     instaplanDto.setElectricalServices(electricalServices);
     instaplanDto.setSewerServices(sewerServices);
     instaplanDto.setWaterServices(waterServices);
-    instaplanDto.setFuelServices(fuelServices);
+    instaplanDto.setGasServices(gasServices);
+    //instaplanDto.setFuelServices(fuelServices);
     
   }
 

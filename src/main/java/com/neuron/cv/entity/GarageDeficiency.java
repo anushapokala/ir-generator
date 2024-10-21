@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class InteriorDeficiencies {
-	public String interiorDeficiencyName;
+public class GarageDeficiency {
+	public String garageDeficiencyName;
 }

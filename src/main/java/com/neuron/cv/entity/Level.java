@@ -1,7 +1,6 @@
 package com.neuron.cv.entity;
 
-import java.util.ArrayList;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,12 +9,17 @@ import lombok.Setter;
 public class Level {
   public int levelNumber;
   public boolean belowGrade;
+  public boolean levelLowCeiling;
+  
   public boolean attic;
+  public List<String> atticAccess;
+  public boolean atticAccessLocation;
+  
   public int totalArea;
   public int finishedArea;
   public int nonStandardFinishedArea;
-  public ArrayList<Room> rooms;
-  public ArrayList<CvPhoto> cv_photos;
+  public List<Room> rooms;
+  public List<CvPhoto> cv_photos;
 //public String breakdownString;
 //  public String levelId;
 //  public String cv_Label;

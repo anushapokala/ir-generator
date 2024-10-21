@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class MechanicalDeficiencies {
-	public String mechanicalDeficiencyName;
+public class Alley {
+	public boolean _public;
+	public boolean _private;
 }

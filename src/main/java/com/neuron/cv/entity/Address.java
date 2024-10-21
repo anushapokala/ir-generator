@@ -1,6 +1,6 @@
 package com.neuron.cv.entity;
 
-import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +11,8 @@ public class Address {
   public String unitNumber;
   public String city;
   public String state;
-  public String Country;
+  public String county;
+  public String country;
   public String postalCode;
-  public ArrayList<PropertyCvPhoto> cv_photos;
+  public List<PropertyCvPhoto> cv_photos;
 }

@@ -1,5 +1,6 @@
 package com.neuron.cv.entity;
 
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,4 +9,5 @@ import lombok.Setter;
 public class Locations {
 	public String locationDescriptionType;
 	public String locationDescriptionDetails;
+	public List<CvPhoto> cv_photos;
 }

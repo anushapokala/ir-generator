@@ -2,19 +2,15 @@ package com.neuron.cv.dbservice;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
 import com.neuron.cv.constants.CVConstants;
-import com.neuron.cv.dbrepo.IrScanRepository;
 import com.neuron.cv.dto.InspectionReportResultDto;
 import com.neuron.cv.dto.ParamDTO;
 import com.neuron.cv.service.CVReportValidatorService;
 import com.neuron.cv.service.PopulateCVJson;
 import com.neuron.cv.service.StorjService;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -23,9 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class IrScanService {
-	
-	 @Autowired
-	  IrScanRepository scanRepository;
 
 	  @Autowired
 	  IrScanServiceImpl scanServiceimpl;
@@ -33,23 +26,20 @@ public class IrScanService {
 	  @Autowired
 	  public PopulateCVJson populateCVJson;
 
-
 	  @Value("${json.creation.dirpath}")
 	  private String jsonLocalDirPath;
 
 	  @Value("${storj.bucketName}")
 	  private String bucketName;
 
-	  @Value("${cv.report.can.validate}")
-	  private boolean isValidateJson;
-
+      @Value("${cv.report.can.validate}")
+      private boolean isValidateJson;
 
 	  @Autowired
 	  private StorjService storjService;
 
 	  @Autowired
 	  private CVReportValidatorService cVReportValidatorService;
-
 
 	  public String generateCVReport(ParamDTO paramDTO, boolean isSaveToStorj) {
 		    InspectionReportResultDto resultDto = scanServiceimpl.generateCVReport(paramDTO);
@@ -66,11 +56,11 @@ public class IrScanService {
 		              resultDto.getModel_url_3d());
 		      }
 		    } catch (Exception e) {
-		      // TODO Auto-generated catch block
 		      log.error("generateCVReport: Exception while generateCV report API " + e.getMessage());
 		    }
 		    return result;
 		  }
+	  
 	  private void moveFinalReportFiletoStorj(ParamDTO paramDTO, String fileName, String model_url_3d) {
 		    File finalReport = new File(fileName);
 		    String[] completedDirpath = model_url_3d.split(bucketName);

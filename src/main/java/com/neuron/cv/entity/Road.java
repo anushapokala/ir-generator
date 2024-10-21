@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter
 public class Road {
 	public String roadOwnershipType;
+	public boolean roadMaintainedIndicator;
 	public boolean yearRoundAccessIndicator;
 	public ArrayList<PropertyCvPhoto> cv_photos;
 }

@@ -1,6 +1,6 @@
 package com.neuron.cv.entity;
 
-import java.util.ArrayList;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Builder
 public class SiteUtility {
-  public ArrayList<ElectricalService> electricalServices;
-  public ArrayList<SewerService> sewerServices;
-  public ArrayList<WaterService> waterServices;
-  public ArrayList<FuelService> fuelServices;
+  public List<ElectricalService> electricalServices;
+  public List<SewerService> sewerServices;
+  public List<WaterService> waterServices;
+  public List<GasService> gasServices;
 }

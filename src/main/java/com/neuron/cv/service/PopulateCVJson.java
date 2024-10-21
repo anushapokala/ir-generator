@@ -30,6 +30,7 @@ import com.neuron.cv.entity.ElectricalService;
 import com.neuron.cv.entity.Exterior;
 import com.neuron.cv.entity.Features;
 import com.neuron.cv.entity.FuelService;
+import com.neuron.cv.entity.GasService;
 import com.neuron.cv.entity.GpsCoordinates;
 import com.neuron.cv.entity.Identification;
 import com.neuron.cv.entity.InspectionReport;
@@ -116,14 +117,18 @@ public class PopulateCVJson {
     if (!CollectionUtils.isEmpty(instaplan.getWaterServices()))
       waterServices.addAll(instaplan.getWaterServices());
 
-    ArrayList<FuelService> fuelServices = new ArrayList<>();
+    //ArrayList<FuelService> fuelServices = new ArrayList<>();
     // FuelService fuelService = new FuelService();
-    if (!CollectionUtils.isEmpty(instaplan.getFuelServices()))
-      fuelServices.addAll(instaplan.getFuelServices());
+    //if (!CollectionUtils.isEmpty(instaplan.getFuelServices()))
+    //  fuelServices.addAll(instaplan.getFuelServices());
+    
+    ArrayList<GasService> gasServices = new ArrayList<>();
+    if (!CollectionUtils.isEmpty(instaplan.getGasServices()))
+      gasServices.addAll(instaplan.getGasServices());
 
     SiteUtility siteUtility =
         SiteUtility.builder().electricalServices(electricalServices).sewerServices(sewerServices)
-            .waterServices(waterServices).fuelServices(fuelServices).build();
+            .waterServices(waterServices).gasServices(gasServices).build();
 
     site.setLot(lot);
     site.setSiteUtility(siteUtility);
@@ -302,7 +307,7 @@ public class PopulateCVJson {
     Property property = Property.builder().address(address).build();
     // property.setAddress(address);
     property.setIdentification(identification);
-    property.setPropertyAnalysis(propertyAnalysis);
+    //property.setPropertyAnalysis(propertyAnalysis);
     property.setSite(site);
 //    property.setStructures(structures);
 //    property.setInterior(interior);

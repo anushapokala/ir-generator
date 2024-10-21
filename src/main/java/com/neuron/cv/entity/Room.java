@@ -1,7 +1,6 @@
 package com.neuron.cv.entity;
 
-import java.util.ArrayList;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,10 +8,16 @@ import lombok.Setter;
 @Getter
 public class Room {
   public String roomType;
-  public InteriorDeficiencies interiorDeficiencies;
-  public InteriorUpdates interiorUpdates;
-  public ArrayList<RoomFeature> roomFeatures;
-  public ArrayList<CvPhoto> cv_photos;
+  
+  // Only for roomType=OTHER
+  public String otherRoomTypeDescription;
+  
+  public Appliances appliances;
+  public List<InteriorDeficiency> interiorDeficiencies;
+  public List<InteriorUpdate> interiorUpdates;
+  public List<RoomFeature> roomFeatures;
+  public List<PlumbingFixture> plumbingFixtures;
+  public List<CvPhoto> cv_photos;
 //  public String cv_Label;
 //  public String roomId;
 //  public String roomName;

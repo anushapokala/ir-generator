@@ -6,7 +6,9 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Appliances {
-  public boolean rangeOvenExists;
+public class View {
+  public String unitViewDescriptionType;
+  public String unitViewQuality;
+  public String unitViewDescriptionDetails;
   public List<CvPhoto> cv_photos;
 }

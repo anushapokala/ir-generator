@@ -1,6 +1,7 @@
 package com.neuron.cv.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,18 +9,28 @@ import lombok.Setter;
 @Getter
 public class Structure {
   public String structureType;
-  public String structureArea;
+  public long structureArea;
   public String attachmentType;
-  public ArrayList<String> foundationType;
+  public List<String> foundationType;
   public String constructionStatus;
   public String constructionType;
   public boolean containsRooms;
   public int yearBuilt;
   public boolean yearBuiltEstimate;
-  public ArrayList<ExteriorDeficiencies> exteriorDeficiencies;
-  public ArrayList<ExteriorUpdates> exteriorUpdates;
-  public ArrayList<CvPhoto> cv_photos;
-  public ArrayList<Unit> units;
+  
+  public String buildingDesign;
+  public String projectName;
+  public String buildingNumber;
+  public int numberOfStories;
+  public int numberOfElevators;
+  
+  public boolean condoOffstreetParkingAvailable;
+  public List<CondoCarStorage> condoCarStorages;
+  
+  public List<ExteriorDeficiency> exteriorDeficiencies;
+  public List<ExteriorUpdate> exteriorUpdates;
+  public List<CvPhoto> cv_photos;
+  public List<Unit> units;
 //  public double cv_finishedFloorArea;
 //  public double cv_nonGlaFinishedFloorArea;
 //  public double cv_glaFinishedFloorArea;

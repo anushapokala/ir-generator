@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class WaterService {
-  public String waterType;
+public class GasService {
+  public String gasType;
 }

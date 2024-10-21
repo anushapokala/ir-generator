@@ -10,15 +10,14 @@ public class PropertyCvPhoto {
   public String photoType;
   public String photoLatitude;
   public String photoLongitude;
-  //public String photoImgType;
   public String photoDescription;
   public Long photoTimeSpan;
-  public String aiProvider;
   public String photoFileURL;
+  
+  //public String photoImgType;
   public String photoId;
+  public String aiProvider;
   public int rank;
   public int confidence;
   public boolean _seleccted;
-
-
 }

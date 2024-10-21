@@ -9,6 +9,4 @@ import lombok.Setter;
 public class InspectionReportResultDto {
   public Root root;
   private String model_url_3d;
-  
-  
 }

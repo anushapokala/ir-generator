@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Appliances {
-  public boolean rangeOvenExists;
+public class UnitFeature {  
+  public String featureType;
   public List<CvPhoto> cv_photos;
 }
