@@ -1,10 +1,13 @@
 package com.neuron.cv.dbservice;
 
+import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.neuron.cv.constants.CVConstants;
 import com.neuron.cv.constants.CVLookUpDetails;
 import com.neuron.cv.dbentity.CvOrder;
@@ -31,9 +36,17 @@ import com.neuron.cv.dto.RoomDto;
 import com.neuron.cv.dto.SmartTagDto;
 import com.neuron.cv.dto.StructureDto;
 import com.neuron.cv.dto.UnitDto;
+import com.neuron.cv.entity.Address;
 import com.neuron.cv.entity.CvPhoto;
+import com.neuron.cv.entity.GpsCoordinates;
+import com.neuron.cv.entity.Identification;
+import com.neuron.cv.entity.Lot;
+import com.neuron.cv.entity.Property;
+import com.neuron.cv.entity.PropertyAnalysis;
 import com.neuron.cv.entity.PropertyCvPhoto;
 import com.neuron.cv.entity.Root;
+import com.neuron.cv.entity.Site;
+import com.neuron.cv.entity.SiteUtility;
 import com.neuron.cv.service.IrStorjService;
 import com.neuron.cv.service.PopulateCVJson;
 import com.neuron.cv.util.MetricsCalucatorService;
@@ -87,12 +100,18 @@ public class IrScanServiceImpl {
 //		List<Object[]> spinResults = scanRepoImpl.getSpinCaptureDetailsforCVReport(paramDTO);
 		List<InspectionReport> reports = inspectionReportRepoImpl.getInspectionReports(paramDTO);
 		String reportsfile = this.getInspectionReports(paramDTO);
+		
+		byte[] inspectionFile = storjService.downloadFile(bucketName, paramDTO.getFolderPath()+"inspection-report-"+paramDTO.getSessionId()+CVConstants.JSON);
+		JSONObject finalObj=this.byteArrayToJsonObject(inspectionFile);
+	    Root rootObj = this.mapFieldsWithInspectionReportObj(finalObj);
 		log.info("generateCVReport: got results from database: ");
 		InstaplanDto instaplanDto = new InstaplanDto();
-		  LocalDateTime firstSpinCapturedAt = LocalDateTime.parse(addressJson.getString(CVConstants.JSON_FIELD_FIRST_SPIN_CAPTURED_AT));
-		  Instant instant = firstSpinCapturedAt.atZone(ZoneId.systemDefault()).toInstant();
-		  instaplanDto.setFirstSpinCapturedAt((Instant) instant);
-		  LocalDateTime lastSpinCapturedAt = LocalDateTime.parse(addressJson.getString(CVConstants.JSON_FIELD_LAST_SPIN_CAPTURED_AT));
+		
+		LocalDateTime firstSpinCapturedAt = LocalDateTime.parse(addressJson.getString(CVConstants.JSON_FIELD_FIRST_SPIN_CAPTURED_AT));
+		Instant instant = firstSpinCapturedAt.atZone(ZoneId.systemDefault()).toInstant();
+		instaplanDto.setFirstSpinCapturedAt((Instant) instant);
+		
+		LocalDateTime lastSpinCapturedAt = LocalDateTime.parse(addressJson.getString(CVConstants.JSON_FIELD_LAST_SPIN_CAPTURED_AT));
 		  instant = lastSpinCapturedAt.atZone(ZoneId.systemDefault()).toInstant();
 		  instaplanDto.setLastSpinCapturedAt((Instant) instant);
 //		if (!spinResults.isEmpty()) {
@@ -229,6 +248,19 @@ public class IrScanServiceImpl {
 		return inspectionReportDto;
 	}
 
+	private JSONObject byteArrayToJsonObject(byte[] inspectionFile) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		String jsonString="";
+    	try {
+    		jsonString = new String(inspectionFile, "UTF-8");
+			objectMapper.readTree(jsonString);
+		} catch (JsonProcessingException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return new JSONObject(jsonString);
+	}
+
 	private InstaplanDto setphotoJsonPath(InstaplanDto instaplanDto) {
 		log.info("setphotoJsonPath ");
 		// set property.smartTag.photoJsonPath
@@ -361,10 +393,23 @@ public class IrScanServiceImpl {
 	private String getScanDetailsforCVReport(ParamDTO paramDTO,JSONObject addressJson) {
 		String folderPath = paramDTO.getFolderPath();
 		List<String> files= storjService.listObjects(bucketName,folderPath);
-		JSONObject temp = addressJson;
+		//scan-list-info-UUID
+		List<String> scanListPaths = new ArrayList<>(); 
+		for (Iterator iterator = files.iterator(); iterator.hasNext();) {
+			String string = (String) iterator.next();
+			if(string.contains("scan-list-info")) {
+				scanListPaths.add(string);
+			}
+		}
+		List<JSONObject> downloadedFiles = new ArrayList<>();
+		for (String string : scanListPaths) {
+			byte[] downloadedFile = storjService.downloadFile(bucketName, string);
+			downloadedFiles.add(this.byteArrayToJsonObject(downloadedFile));
+		}
 		return "";
 	}
 	private String getInspectionReports(ParamDTO paramDTO) {
+		String folderPath = paramDTO.getFolderPath();
 		int lastSlashIndex = paramDTO.getFolderPath().lastIndexOf('/');
 		int secondLastSlashIndex = paramDTO.getFolderPath().lastIndexOf('/', lastSlashIndex - 1);
 		String resultString="";
@@ -376,7 +421,54 @@ public class IrScanServiceImpl {
             System.out.println("Not enough slashes in the string.");
         }
 		List<String> files= storjService.listObjects(bucketName,resultString);
+		//scan-list-info-UUID
+		List<String> postScanListPaths = new ArrayList<>(); 
+		for (Iterator iterator = files.iterator(); iterator.hasNext();) {
+			String string = (String) iterator.next();
+			if(string.contains("post-scan-info")) {
+				postScanListPaths.add(string);
+			}
+		}
+		List<JSONObject> downloadedFiles = new ArrayList<>();
+		for (String string : postScanListPaths) {
+			byte[] downloadedFile = storjService.downloadFile(bucketName, string);
+			downloadedFiles.add(this.byteArrayToJsonObject(downloadedFile));
+		}
 		return "";
 	}
+	 private Root mapFieldsWithInspectionReportObj(JSONObject inspectionReportObj) {
+		 Root root = new Root();
+		 InspectionReport inspectReport = new InspectionReport();
+		 Address address = new Address();
+		 Lot lot = new Lot();
+		 GpsCoordinates gpsCoordinates= new GpsCoordinates();
+		 PropertyAnalysis propertyAnalysis= new PropertyAnalysis();
+		 
+		 
+	      String[] inspectionKeys= inspectionReportObj.getNames(inspectionReportObj);
+			 Property property = null;
+			 
+		 for (String key : inspectionKeys) {
+			if(key.equals(CVConstants.STREET_ADDRESS)) {
+			address.setStreetAddress(inspectionReportObj.getString(CVConstants.STREET_ADDRESS));
+			}
+			if(key.equals(CVConstants.CITY)) {
+				address.setCity(inspectionReportObj.getString(CVConstants.CITY));
+			}if(key.equals(CVConstants.STATE)) {
+				address.setState(inspectionReportObj.getString(CVConstants.STATE));
+			}if(key.equals(CVConstants.POSTAL_CODE)) {
+				address.setPostalCode(inspectionReportObj.getString(CVConstants.POSTAL_CODE));
+			}if(key.equals(CVConstants.LATITUDE)) {
+				gpsCoordinates.setLatitude(inspectionReportObj.getDouble(CVConstants.LATITUDE));
+			}if(key.equals(CVConstants.LONGITUDE)) {
+				gpsCoordinates.setLongitude(inspectionReportObj.getDouble(CVConstants.LONGITUDE));
+			}if(key.equals(CVConstants.YEARS_OWNED)) {
+				propertyAnalysis.setYearsOwned(inspectionReportObj.getInt(CVConstants.YEARS_OWNED));
+			}			 if( Arrays.asList(inspectionKeys).contains(CVConstants.PROPERTY_OCCUPIED)) {
+				 property.setPropertyOccupied(inspectionReportObj.getBoolean(CVConstants.PROPERTY_OCCUPIED));
+			 }
+		}
+		 return null;
+	 }
 
 }

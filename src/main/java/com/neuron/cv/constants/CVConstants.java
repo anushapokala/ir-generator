@@ -100,8 +100,16 @@ public class CVConstants {
   public static final String JSON_FIELD_LAST_SPIN_CAPTURED_AT = "lastSpinCapturedAt";
   
   
-  
-  
+  //inspectionReport keys
+  public static final String PROPERTY_OCCUPIED="propertyOccupied";
+  public static final String PROPERTY = "property";
+  public static final String STREET_ADDRESS="streetAddress";
+  public static final String CITY="City";
+  public static final String STATE ="State";
+  public static final String POSTAL_CODE="postalCode";
+  public static final String LATITUDE = "Latitude";
+  public static final String LONGITUDE = "Longitude";
+  public static final String YEARS_OWNED ="yearsOwned";
   
   
 }

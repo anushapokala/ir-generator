@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Builder
 public class Property {
-  public String propertyType;
+public String propertyType;
   public boolean propertyOccupied;
   public Address address;
   public Identification identification;
