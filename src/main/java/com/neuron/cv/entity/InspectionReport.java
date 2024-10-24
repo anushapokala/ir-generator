@@ -15,7 +15,7 @@ public class InspectionReport{
     public String pdaSubmitterEntity;
     public String propertyDataCollectorName;
     public String propertyDataCollectorType;
-    public List<DataCollectorContacts> propertyDataCollectorContacts;
+    public List<DataCollectorContact> propertyDataCollectorContacts;
     public String pdaCollectionEntity;
     public boolean dataCollectorAcknowledgement;
     public String dataCollectionDate;

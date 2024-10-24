@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class DataCollectorContacts {
+public class DataCollectorContact {
   
   public String contactMethod;
   public String contactDetail;
