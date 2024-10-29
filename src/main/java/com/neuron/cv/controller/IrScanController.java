@@ -25,7 +25,7 @@ public class IrScanController {
 	@Autowired
 	private IrCommonService commonService;
 	
-	@GetMapping("/generateInspectionReport")
+//	@GetMapping("/generateInspectionReport")
 	public ResponseEntity<String> generateInspectionReport(@RequestHeader("hash-key") String hashKey,
 			@RequestBody ParamDTO paramDTO) {
 		try {

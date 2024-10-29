@@ -98,7 +98,7 @@ public class CVConstants {
   public static final String JSON_FIELD_UNIT_NO = "unitNo";
   public static final String JSON_FIELD_FIRST_SPIN_CAPTURED_AT = "firstSpinCapturedAt";
   public static final String JSON_FIELD_LAST_SPIN_CAPTURED_AT = "lastSpinCapturedAt";
-  
+  public static final String INSPECTION_REPORT_ORDERS = "inspection-report-orders";
   
   //inspectionReport keys
   public static final String PROPERTY_OCCUPIED="propertyOccupied";
@@ -107,8 +107,8 @@ public class CVConstants {
   public static final String CITY="City";
   public static final String STATE ="State";
   public static final String POSTAL_CODE="postalCode";
-  public static final String LATITUDE = "Latitude";
-  public static final String LONGITUDE = "Longitude";
+  public static final String LATITUDE = "latitude";
+  public static final String LONGITUDE = "longitude";
   public static final String YEARS_OWNED ="yearsOwned";
   
   

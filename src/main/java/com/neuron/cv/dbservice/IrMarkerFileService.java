@@ -132,5 +132,31 @@ public class IrMarkerFileService {
 		return inspectionReportDetails;
 
 	}
-
+	
+	public JSONObject getInspectionReportOrderFile(String folderPath, String uuid, int userId) {
+		String[] subStrArr = folderPath.split("/");
+		String filePath = subStrArr[0]+"/"+subStrArr[1]+"/"+subStrArr[2]+"/"+CVConstants.INSPECTION_REPORT_ORDERS+"/"+userId+"-"+uuid+CVConstants.JSON;
+		byte[] result = storjService.downloadFile(bucketName, filePath);
+		String resultStr = new String(result);
+		JSONObject inspectionReportOrderObj = new JSONObject(resultStr);
+		return inspectionReportOrderObj;
+	}
+	
+	public JSONObject getAddressDetails(String folderPath) {
+		String[] path = folderPath.split("/");
+	      String addressPath = path[0] + "/" + path[1] + "/" + path[2] + "/" + path[3] + "/"  + CVConstants.JSON_FILE_ADDRESS_INFO;
+	      byte[] result = storjService.downloadFile(bucketName, addressPath);
+	      String addressStr = new String(result);
+	      JSONObject addressObj = new JSONObject(addressStr);
+	      return addressObj;
+	}
+	
+	public JSONObject getLevelDetails(String folderPath) {
+		String[] path = folderPath.split("/");
+	      String levelPath = path[0] + "/" + path[1] + "/" + path[2] + "/" + path[3] + "/" + path[4] + "/" + CVConstants.JSON_FILE_ADDRESS_INFO;
+	      byte[] result = storjService.downloadFile(bucketName, levelPath);
+	      String levelStr = new String(result);
+	      JSONObject levelObj = new JSONObject(levelStr);
+	      return levelObj;
+	}
 }
