@@ -1,17 +1,22 @@
 package com.neuron.cv.service;
 
 import java.io.IOException;
+import java.util.Date;
+
+import javax.xml.crypto.Data;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ethlo.time.DateTime;
 import com.neuron.cv.constants.CVConstants;
 import com.neuron.cv.dbservice.IrMarkerFileService;
 import com.neuron.cv.dto.InspectionReportResultDto;
 import com.neuron.cv.dto.ParamDTO;
 import com.neuron.cv.entity.Address;
+import com.neuron.cv.entity.DataCollectorContact;
 import com.neuron.cv.entity.GpsCoordinates;
 import com.neuron.cv.entity.Identification;
 import com.neuron.cv.entity.InspectionReport;
@@ -44,13 +49,25 @@ public class IRService {
     int userId= paramDTO.getUserId();
     JSONObject inspectionReportOrderObj=markerFileService.getInspectionReportOrderFile(folderPath, uuid,userId);
     
+    inspectionReport.setPdaHyperlink("");// 'YYYY-mm-dd' - get from storj
+    inspectionReport.setCollectionType("ONSITE");// 'YYYY-mm-dd' - get from storj
     inspectionReport.setCaseFileID("123");
+    inspectionReport.setLpaID("94634565");
+    inspectionReport.setPdaSubmitterEntity("ClassValuation");
+    inspectionReport.setPropertyDataCollectorName("");
+    DataCollectorContact dataCollectorContact = new DataCollectorContact();
+    dataCollectorContact.setContactMethod("EMAIL");
+    dataCollectorContact.setContactDetail(((JSONObject)inspectionReportOrderObj.get("UserAssignedTo")).getString("Email"));
+    dataCollectorContact.setContactMethod("PHONE");
+    dataCollectorContact.setContactDetail(((JSONObject)inspectionReportOrderObj.get("UserAssignedTo")).getString("Phone"));
+    inspectionReport.setDataCollectorAcknowledgement(true); // get this from user submitted data
+    inspectionReport.setDataCollectionDate(null); // 'YYYY-mm-dd' - get from storj
+    inspectionReport.setPdaCollectionEntity("");
+    inspectionReport.setPropertyDataCollectorContacts(null);
+    inspectionReport.setPropertyDataCollectorType("");
     // pdaHyperlink,collectionType,caseFileID,lpaID,pdaSubmitterEntity,propertyDataCollectorName
     // propertyDataCollectorContacts.contactMethod,propertyDataCollectorContacts.contactDetail
-    // pdaCollectionEntity,propertyDataCollectorType,
-    
-    inspectionReport.setDataCollectorAcknowledgement(true); // get this from user submitted data
-    inspectionReport.setDataCollectionDate(null); // 'YYYY-mm-dd' - get from storj 
+    // pdaCollectionEntity,propertyDataCollectorType, 
     
     // Construct property object
     Property property = Property.builder().build();
@@ -77,7 +94,7 @@ public class IRService {
     GpsCoordinates gpsCoordinates = new GpsCoordinates();
     gpsCoordinates.setLatitude(Double.parseDouble(addressDetailsobj.getString(CVConstants.LATITUDE)));
     gpsCoordinates.setLongitude(Double.parseDouble(addressDetailsobj.getString(CVConstants.LONGITUDE)));
-    gpsCoordinates = setupCoordinates(gpsCoordinates);
+//    gpsCoordinates = setupCoordinates(gpsCoordinates);
     Identification identification = Identification.builder().gpsCoordinates(gpsCoordinates).build();
     property.setIdentification(identification);
     inspectionReport.setProperty(property);
