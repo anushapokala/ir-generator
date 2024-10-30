@@ -68,28 +68,19 @@ public class IRService {
 		e.printStackTrace();
 	}
     JSONObject addressFromOrderObj = (JSONObject) inspectionReportOrderObj.get("Address");
-    Address address = new Address();
-    if(addressFromOrderObj.get("City")!= null)
-    	address.setCity(addressFromOrderObj.getString("City"));
-    if(addressFromOrderObj.get("State")!=null)
-    	address.setState(addressFromOrderObj.getString("State"));
-    if(addressFromOrderObj.get("Street")!=null)
-    	address.setStreetAddress(addressFromOrderObj.getString("Street"));
-    if(addressFromOrderObj.get("Country") != null)
-    	address.setCountry(addressFromOrderObj.getString("Country"));
-    if(addressFromOrderObj.get("Zip")!=null)
-    	address.setPostalCode(addressFromOrderObj.getString("Zip"));
-    
-    address = setupAddress(address);
+    JSONObject addressDetails = (JSONObject) geocodingService.splitAddress(addressStr);    
+    Address address = setupAddress(addressFromOrderObj,addressDetails);
     address = addAddressPhotos(address);
     property.setAddress(address);
     
     // GPS coordinates from storj
     GpsCoordinates gpsCoordinates = new GpsCoordinates();
+    gpsCoordinates.setLatitude(Double.parseDouble(addressDetailsobj.getString(CVConstants.LATITUDE)));
+    gpsCoordinates.setLongitude(Double.parseDouble(addressDetailsobj.getString(CVConstants.LONGITUDE)));
     gpsCoordinates = setupCoordinates(gpsCoordinates);
     Identification identification = Identification.builder().gpsCoordinates(gpsCoordinates).build();
     property.setIdentification(identification);
-
+    inspectionReport.setProperty(property);
     // construct other properties from storj
     
     // Site lot props - may be ignored
@@ -115,13 +106,22 @@ public class IRService {
   }
   
   // Get address details from storj - orders file, 
-  private Address setupAddress(Address _address) {
+  private Address setupAddress(JSONObject addressFromOrderObj,JSONObject addressDetails) {
+	 Address _address=new Address();
     _address.setStreetAddress(null);
     _address.setUnitNumber(null);
-    _address.setCity(null);
-    _address.setCounty(null);
-    _address.setState(null);
-    _address.setPostalCode(null);
+    if(addressFromOrderObj.get("City")!= null)
+    	_address.setCity(addressFromOrderObj.getString("City"));
+    if(addressDetails.get("state")!=null)
+    	_address.setState(addressDetails.getString("state"));
+    if(addressFromOrderObj.get("Street")!=null)
+    	_address.setStreetAddress(addressFromOrderObj.getString("Street"));
+    if(addressDetails.get("country") != null)
+    	_address.setCountry(addressDetails.getString("country"));
+    if(addressDetails.get("postcode")!=null)
+    	_address.setPostalCode(addressDetails.getString("postcode"));
+    if(addressDetails.get("county")!=null)
+    	_address.setCounty(addressDetails.getString("county"));
     return _address;
   }
   

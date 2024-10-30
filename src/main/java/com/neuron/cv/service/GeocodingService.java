@@ -1,23 +1,66 @@
 package com.neuron.cv.service;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
-
-import java.io.IOException;
-
-import org.springframework.stereotype.Service;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 @Service
 @Slf4j
 public class GeocodingService {
 
     private static final String NOMINATIM_URL = "https://nominatim.openstreetmap.org/reverse";
+    
+    public static JSONObject splitAddress(String address) {
+    	try {
+            String urlStr = "https://nominatim.openstreetmap.org/search?q=" + 
+                            address.replace(" ", "%20") + "&format=json&addressdetails=1";
+            URL url = new URL(urlStr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0");  // Required by Nominatim
 
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+
+            JSONArray jsonArray = new JSONArray(content.toString());
+            if (jsonArray.length() > 0) {
+                JSONObject json = jsonArray.getJSONObject(0);
+                JSONObject addressDetails = json.getJSONObject("address");
+
+                String city = addressDetails.optString("city", addressDetails.optString("town", ""));
+                String state = addressDetails.optString("state", "");
+                String zipCode = addressDetails.optString("postcode", "");
+                String country = addressDetails.optString("country","");
+                String county = addressDetails.optString("county","");
+                System.out.println("City: " + city);
+                System.out.println("State: " + state);
+                System.out.println("ZIP Code: " + zipCode);
+                return addressDetails;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    	return null;
+    }
     public static String getAddress(double latitude, double longitude) throws IOException {
         String url = NOMINATIM_URL + "?lat=" + latitude + "&lon=" + longitude + "&format=json&addressdetails=1";
 
