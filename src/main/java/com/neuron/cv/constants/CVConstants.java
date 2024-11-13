@@ -78,6 +78,7 @@ public class CVConstants {
   public static final String FILE_SEPARATOR ="/";
   
   public static final String INSPECTION_REPORT_SESSION_ID_FILE=	"inspection-report-";
+  public static final String INSPECTION_REPORT_RESPONSE_FILE= "inspection-report-response-";
   public static final String IMAGENAME ="imageName";
   public static final String JSON=	".json";
   public static final String PROPCALC ="propCalcs";
@@ -111,5 +112,6 @@ public class CVConstants {
   public static final String LONGITUDE = "longitude";
   public static final String YEARS_OWNED ="yearsOwned";
   
+  public static final String LOCATION_DESC_TYPE ="locationDescriptionType";
   
 }

@@ -39,6 +39,19 @@ public class IrMarkerFileService {
       return new String(result);
     }
 	
+	public String getInspectionReportResponseFile(String folderPath, String sessionId) {
+      String fileName = CVConstants.INSPECTION_REPORT_RESPONSE_FILE + "" + sessionId + "" + CVConstants.JSON;
+      String filePath = folderPath + fileName;
+      // return getFilefromResource(fileName);
+      List<String> files= storjService.listObjects(bucketName,filePath);
+      byte[] result = null;
+      if(!files.isEmpty())
+          result = storjService.downloadFile(bucketName, filePath);
+      else 
+          return "";
+      return new String(result);
+  }
+	
 	public String getInspectionReportSessionFile(String folderPath, String sessionId) {
 		String fileName = CVConstants.INSPECTION_REPORT_SESSION_ID_FILE + "" + sessionId + "" + CVConstants.JSON;
 		String filePath = folderPath + fileName;

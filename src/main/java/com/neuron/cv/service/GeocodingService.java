@@ -24,7 +24,7 @@ public class GeocodingService {
 
     private static final String NOMINATIM_URL = "https://nominatim.openstreetmap.org/reverse";
     
-    public static JSONObject splitAddress(String address) {
+    public JSONObject splitAddress(String address) {
     	try {
             String urlStr = "https://nominatim.openstreetmap.org/search?q=" + 
                             address.replace(" ", "%20") + "&format=json&addressdetails=1";
@@ -51,9 +51,11 @@ public class GeocodingService {
                 String zipCode = addressDetails.optString("postcode", "");
                 String country = addressDetails.optString("country","");
                 String county = addressDetails.optString("county","");
-                System.out.println("City: " + city);
-                System.out.println("State: " + state);
-                System.out.println("ZIP Code: " + zipCode);
+                log.info("City: " + city);
+                log.info("State: " + state);
+                log.info("county: " + county);
+                log.info("country: " + country);
+                log.info("ZIP Code: " + zipCode);
                 return addressDetails;
             }
         } catch (Exception e) {
@@ -61,7 +63,7 @@ public class GeocodingService {
         }
     	return null;
     }
-    public static String getAddress(double latitude, double longitude) throws IOException {
+    public String getAddress(double latitude, double longitude) throws IOException {
         String url = NOMINATIM_URL + "?lat=" + latitude + "&lon=" + longitude + "&format=json&addressdetails=1";
 
         OkHttpClient client = new OkHttpClient();
